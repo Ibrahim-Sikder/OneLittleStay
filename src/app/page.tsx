@@ -19,8 +19,8 @@ export default function Home() {
       <ServiceSection />
       <ToolSection />
       <PricingSection />
-      <ChooseUs />
       <EasySection />
+      <ChooseUs />
       <FAQSection />
       <Review />
       <FooterSection />

@@ -23,13 +23,19 @@ const tools = [
 
 export default function ToolSection() {
   return (
-    <section className="w-full bg-white py-16 px-6">
+    <section className="w-full bg-white py-16 px-4 sm:px-6">
       {/* Header */}
-      <div className="text-center max-w-2xl mx-auto mb-14">
-        <h2 className="text-4xl font-bold text-[#1a1a1a] mb-4">
-          Our <span className="text-[#e91e63]">Tools</span>
+      <div className="text-center max-w-2xl mx-auto mb-14 px-4">
+        <h2
+          className="text-3xl sm:text-4xl font-bold mb-4"
+          style={{ color: "var(--text-primary)" }}
+        >
+          Our <span style={{ color: "var(--primary)" }}>Tools</span>
         </h2>
-        <p className="text-gray-500 text-sm leading-relaxed">
+        <p
+          className="text-sm leading-relaxed"
+          style={{ color: "var(--text-secondary)" }}
+        >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -38,16 +44,20 @@ export default function ToolSection() {
       </div>
 
       {/* Grid */}
-      <div className=" mx-auto bg-[#f5f5f5] rounded-2xl p-8">
+      <div
+        className="mx-auto rounded-2xl p-4 sm:p-6 md:p-8"
+        style={{ backgroundColor: "var(--bg-light)" }}
+      >
         <Container className="max-w-3xl">
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             {tools.slice(0, 9).map((tool, i) => (
               <div
                 key={i}
-                className="bg-white rounded-xl gap-5 flex items-center justify-center p-3"
+                className="rounded-xl gap-5 flex items-center justify-center p-3"
                 style={{
                   minHeight: "100px",
                   boxShadow: "0 1px 6px rgba(0,0,0,0.06)",
+                  backgroundColor: "var(--background)",
                 }}
               >
                 <Image
@@ -55,7 +65,7 @@ export default function ToolSection() {
                   alt={tool.alt}
                   width={160}
                   height={48}
-                  className="object-cover h-auto w-32"
+                  className="object-contain h-auto w-24 sm:w-28 md:w-32"
                 />
               </div>
             ))}
