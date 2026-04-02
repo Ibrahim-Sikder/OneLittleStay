@@ -1,5 +1,4 @@
 import Image from "next/image";
-import tool1 from "@/assets/images/tools/tool.png";
 import tool2 from "@/assets/images/tools/tool2.png";
 import tool3 from "@/assets/images/tools/tool3.png";
 import tool4 from "@/assets/images/tools/tool4.png";
@@ -7,16 +6,19 @@ import tool5 from "@/assets/images/tools/tool5.png";
 import tool6 from "@/assets/images/tools/tool6.png";
 import tool7 from "@/assets/images/tools/tool7.png";
 import tool8 from "@/assets/images/tools/tool8.png";
+import tool9 from "@/assets/images/tools/tool9.png";
+import Container from "@/components/container";
 
 const tools = [
-  { img: tool1, alt: "PriceLabs" },
-  { img: tool2, alt: "Wheelhouse" },
+  { img: tool4, alt: "PriceLabs" },
+  { img: tool3, alt: "Wheelhouse" },
   { img: tool3, alt: "Beyond Pricing" },
-  { img: tool4, alt: "Hostfully" },
+  { img: tool6, alt: "Hostfully" },
   { img: tool5, alt: "Guesty" },
   { img: tool6, alt: "Lodgify" },
   { img: tool7, alt: "Hostfully" },
   { img: tool8, alt: "Guesty" },
+  { img: tool9, alt: "Guesty" },
 ];
 
 export default function ToolSection() {
@@ -36,27 +38,29 @@ export default function ToolSection() {
       </div>
 
       {/* Grid */}
-      <div className="max-w-4xl mx-auto bg-[#f5f5f5] rounded-2xl p-6">
-        <div className="grid grid-cols-3 gap-4">
-          {tools.slice(0, 9).map((tool, i) => (
-            <div
-              key={i}
-              className="bg-white rounded-xl flex items-center justify-center p-6"
-              style={{
-                minHeight: "100px",
-                boxShadow: "0 1px 6px rgba(0,0,0,0.06)",
-              }}
-            >
-              <Image
-                src={tool.img}
-                alt={tool.alt}
-                width={160}
-                height={48}
-                className="object-contain max-h-12 w-auto"
-              />
-            </div>
-          ))}
-        </div>
+      <div className=" mx-auto bg-[#f5f5f5] rounded-2xl p-8">
+        <Container className="max-w-3xl">
+          <div className="grid grid-cols-3 gap-6">
+            {tools.slice(0, 9).map((tool, i) => (
+              <div
+                key={i}
+                className="bg-white rounded-xl gap-5 flex items-center justify-center p-3"
+                style={{
+                  minHeight: "100px",
+                  boxShadow: "0 1px 6px rgba(0,0,0,0.06)",
+                }}
+              >
+                <Image
+                  src={tool.img}
+                  alt={tool.alt}
+                  width={160}
+                  height={48}
+                  className="object-cover h-auto w-32"
+                />
+              </div>
+            ))}
+          </div>
+        </Container>
       </div>
     </section>
   );
