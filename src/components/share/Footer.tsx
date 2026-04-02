@@ -1,5 +1,7 @@
 import Image from "next/image";
-
+import StillHaveQuestions from "../ui/home/StillHaveQuestions";
+import Container from "../container";
+import logo from "@/assets/images/logo/logo.png";
 // Social icons
 const TwitterIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -22,18 +24,6 @@ const GithubIcon = () => (
   </svg>
 );
 
-// Google logo
-const GoogleLogo = () => (
-  <span className="text-2xl font-bold tracking-tight">
-    <span className="text-[#4285F4]">G</span>
-    <span className="text-[#EA4335]">o</span>
-    <span className="text-[#FBBC05]">o</span>
-    <span className="text-[#4285F4]">g</span>
-    <span className="text-[#34A853]">l</span>
-    <span className="text-[#EA4335]">e</span>
-  </span>
-);
-
 const footerLinks = {
   Company: ["About", "Features", "Works", "Career"],
   Help: [
@@ -53,89 +43,57 @@ const footerLinks = {
 export default function FooterSection() {
   return (
     <div className="w-full bg-white">
-      {/* Still have questions */}
-      <div className="max-w-3xl mx-auto px-6 py-10">
-        <div
-          className="rounded-2xl bg-[#f8fafc] flex flex-col items-center text-center py-10 px-8 border border-gray-100"
-          style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}
-        >
-          {/* Overlapping avatars */}
-          <div className="flex -space-x-3 mb-5">
-            {["bg-yellow-400", "bg-pink-400", "bg-blue-300"].map((bg, i) => (
-              <div
-                key={i}
-                className={`w-10 h-10 rounded-full border-2 border-white ${bg} flex items-center justify-center text-white text-xs font-bold`}
-              >
-                {["JW", "EH", "RF"][i]}
+      <StillHaveQuestions />
+      <div className="border-t border-gray-200" />
+      <Container>
+        <footer className=" px-6 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+            <div>
+              <div className="mb-4">
+                <Image src={logo} alt="Logo" />
+              </div>
+              <p className="text-gray-500 text-sm leading-relaxed mb-6">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                dictum aliquet accumsan porta lectus ridiculus in mattis. Netus
+                sodales in volutpat ullamcorper amet adipiscing fermentum.
+              </p>
+              <div className="flex items-center gap-4 text-gray-500">
+                <a href="#" className="hover:text-[#1a1a1a] transition-colors">
+                  <TwitterIcon />
+                </a>
+                <a href="#" className="hover:text-[#1a1a1a] transition-colors">
+                  <FacebookIcon />
+                </a>
+                <a href="#" className="hover:text-[#1a1a1a] transition-colors">
+                  <InstagramIcon />
+                </a>
+                <a href="#" className="hover:text-[#1a1a1a] transition-colors">
+                  <GithubIcon />
+                </a>
+              </div>
+            </div>
+
+            {/* Link columns */}
+            {Object.entries(footerLinks).map(([col, links]) => (
+              <div key={col}>
+                <h4 className="font-bold text-[#1a1a1a] mb-5">{col}</h4>
+                <ul className="flex flex-col gap-3">
+                  {links.map((link) => (
+                    <li key={link}>
+                      <a
+                        href="#"
+                        className="text-gray-500 text-sm hover:text-[#e91e63] transition-colors"
+                      >
+                        {link}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
-          <h3 className="text-xl font-bold text-[#1a1a1a] mb-2">
-            Still have Questions?
-          </h3>
-          <p className="text-gray-500 text-sm mb-6">
-            Can&apos;t find the answer you&apos;re looking for? Please chat to
-            our friendly team.
-          </p>
-          <button className="bg-[#e91e63] text-white text-sm font-semibold px-8 py-3 rounded-lg hover:bg-pink-600 transition-colors">
-            Get in touch
-          </button>
-        </div>
-      </div>
-
-      {/* Divider */}
-      <div className="border-t border-gray-200" />
-
-      {/* Footer links */}
-      <footer className="max-w-5xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-          {/* Brand */}
-          <div>
-            <div className="mb-4">
-              <GoogleLogo />
-            </div>
-            <p className="text-gray-500 text-sm leading-relaxed mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              dictum aliquet accumsan porta lectus ridiculus in mattis. Netus
-              sodales in volutpat ullamcorper amet adipiscing fermentum.
-            </p>
-            <div className="flex items-center gap-4 text-gray-500">
-              <a href="#" className="hover:text-[#1a1a1a] transition-colors">
-                <TwitterIcon />
-              </a>
-              <a href="#" className="hover:text-[#1a1a1a] transition-colors">
-                <FacebookIcon />
-              </a>
-              <a href="#" className="hover:text-[#1a1a1a] transition-colors">
-                <InstagramIcon />
-              </a>
-              <a href="#" className="hover:text-[#1a1a1a] transition-colors">
-                <GithubIcon />
-              </a>
-            </div>
-          </div>
-
-          {/* Link columns */}
-          {Object.entries(footerLinks).map(([col, links]) => (
-            <div key={col}>
-              <h4 className="font-bold text-[#1a1a1a] mb-5">{col}</h4>
-              <ul className="flex flex-col gap-3">
-                {links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="text-gray-500 text-sm hover:text-[#e91e63] transition-colors"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </footer>
-
+        </footer>
+      </Container>
       {/* Copyright bar */}
       <div className="bg-[#1a1035] py-4 px-6 text-center">
         <p className="text-gray-400 text-sm">
