@@ -53,7 +53,7 @@ const dots = [
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full bg-white overflow-hidden">
+    <section className="relative w-full bg-white overflow-hidden py-24">
       {/* Grid background */}
       <div
         className="absolute inset-0 pointer-events-none opacity-20"
@@ -122,7 +122,7 @@ export default function HeroSection() {
 
       {/* Floating brand icons */}
       {/* Top-left: Airbnb */}
-      <div className="absolute top-[12%] left-[3%] sm:left-[6%] lg:left-[10%] -rotate-12 w-12 h-12 sm:w-14 sm:h-14 lg:w-20 lg:h-20 ">
+      <div className="absolute top-[5%] left-[3%] sm:left-[6%] lg:left-[25%] -rotate-12 w-12 h-12 sm:w-14 sm:h-14 lg:w-20 lg:h-20 ">
         <Image
           src={logo}
           alt="Airbnb Logo"
@@ -133,7 +133,7 @@ export default function HeroSection() {
       </div>
 
       {/* Top-right: Booking */}
-      <div className="absolute top-[12%] right-[3%] sm:right-[6%] lg:right-[12%] rotate-6 w-12 h-12 sm:w-14 sm:h-14 lg:w-20 lg:h-20 ">
+      <div className="absolute top-[5%] right-[3%] sm:right-[6%] lg:right-[25%] rotate-6 w-12 h-12 sm:w-14 sm:h-14 lg:w-20 lg:h-20 ">
         <Image
           src={logo4}
           alt="Booking Logo"
@@ -144,7 +144,7 @@ export default function HeroSection() {
       </div>
 
       {/* Bottom-left: Vrbo */}
-      <div className="absolute top-[55%] left-[3%] sm:left-[6%] lg:left-[10%] -rotate-6 w-12 h-12 sm:w-14 sm:h-14 lg:w-20 lg:h-20 ">
+      <div className="absolute top-[85%] left-[3%] sm:left-[6%] lg:left-[30%] -rotate-6 w-12 h-12 sm:w-14 sm:h-14 lg:w-20 lg:h-20 ">
         <Image
           src={logo3}
           alt="Vrbo Logo"
@@ -155,7 +155,7 @@ export default function HeroSection() {
       </div>
 
       {/* Bottom-right: Tripadvisor */}
-      <div className="absolute top-[55%] right-[3%] sm:right-[6%] lg:right-[10%] rotate-12 w-12 h-12 sm:w-14 sm:h-14 lg:w-20 lg:h-20 ">
+      <div className="absolute top-[85%] right-[3%] sm:right-[6%] lg:right-[30%] rotate-12 w-12 h-12 sm:w-14 sm:h-14 lg:w-20 lg:h-20 ">
         <Image
           src={logo2}
           alt="Tripadvisor Logo"
