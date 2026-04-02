@@ -16,9 +16,10 @@ export default function Home() {
       <Header />
       <HeroSection />
       <TrustedCompanies />
+      <PricingSection />
       <ServiceSection />
       <ToolSection />
-      <PricingSection />
+
       <EasySection />
       <ChooseUs />
       <Review />
