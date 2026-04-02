@@ -53,10 +53,7 @@ const dots = [
 
 export default function HeroSection() {
   return (
-    <section
-      className="relative w-full bg-white overflow-hidden"
-      style={{ minHeight: "calc(100vh - 89px)" }}
-    >
+    <section className="relative w-full bg-white overflow-hidden">
       {/* Grid background */}
       <div
         className="absolute inset-0 pointer-events-none opacity-20"
@@ -73,10 +70,10 @@ export default function HeroSection() {
         className="absolute pointer-events-none"
         style={{
           /* Desktop: exact Figma values */
-          width: "923px",
-          height: "523px",
-          top: "149px",
-          left: "249px",
+          // width: "923px",
+          // height: "523px",
+          // top: "149px",
+          // left: "249px",
           borderRadius: "50%",
           background:
             "radial-gradient(ellipse at center, rgba(236, 72, 153, 0.13) 0%, rgba(236, 72, 153, 0.07) 35%, rgba(255,255,255,0) 70%)",
@@ -89,8 +86,8 @@ export default function HeroSection() {
       <div
         className="absolute pointer-events-none block md:hidden"
         style={{
-          width: "90vw",
-          height: "300px",
+          // width: "90vw",
+          // height: "300px",
           top: "80px",
           left: "50%",
           transform: "translateX(-50%)",
@@ -125,7 +122,7 @@ export default function HeroSection() {
 
       {/* Floating brand icons */}
       {/* Top-left: Airbnb */}
-      <div className="absolute top-[12%] left-[3%] sm:left-[6%] lg:left-[10%] -rotate-12 w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-2xl flex items-center justify-center">
+      <div className="absolute top-[12%] left-[3%] sm:left-[6%] lg:left-[10%] -rotate-12 w-12 h-12 sm:w-14 sm:h-14 lg:w-20 lg:h-20 ">
         <Image
           src={logo}
           alt="Airbnb Logo"
@@ -136,7 +133,7 @@ export default function HeroSection() {
       </div>
 
       {/* Top-right: Booking */}
-      <div className="absolute top-[12%] right-[3%] sm:right-[6%] lg:right-[12%] rotate-6 w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-2xl flex items-center justify-center">
+      <div className="absolute top-[12%] right-[3%] sm:right-[6%] lg:right-[12%] rotate-6 w-12 h-12 sm:w-14 sm:h-14 lg:w-20 lg:h-20 ">
         <Image
           src={logo4}
           alt="Booking Logo"
@@ -147,7 +144,7 @@ export default function HeroSection() {
       </div>
 
       {/* Bottom-left: Vrbo */}
-      <div className="absolute top-[55%] left-[3%] sm:left-[6%] lg:left-[10%] -rotate-6 w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-2xl flex items-center justify-center">
+      <div className="absolute top-[55%] left-[3%] sm:left-[6%] lg:left-[10%] -rotate-6 w-12 h-12 sm:w-14 sm:h-14 lg:w-20 lg:h-20 ">
         <Image
           src={logo3}
           alt="Vrbo Logo"
@@ -158,7 +155,7 @@ export default function HeroSection() {
       </div>
 
       {/* Bottom-right: Tripadvisor */}
-      <div className="absolute top-[55%] right-[3%] sm:right-[6%] lg:right-[10%] rotate-12 w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-2xl flex items-center justify-center">
+      <div className="absolute top-[55%] right-[3%] sm:right-[6%] lg:right-[10%] rotate-12 w-12 h-12 sm:w-14 sm:h-14 lg:w-20 lg:h-20 ">
         <Image
           src={logo2}
           alt="Tripadvisor Logo"
@@ -169,7 +166,7 @@ export default function HeroSection() {
       </div>
 
       {/* Hero content */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center pt-16 pb-12 px-4 sm:px-6">
+      <div className="relative z-10 flex flex-col items-center justify-center text-center pt-16 pb-12 px-4 sm:px-6 ">
         <h1
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 leading-tight"
           style={{ color: "var(--text-primary)" }}
@@ -216,18 +213,6 @@ export default function HeroSection() {
       </div>
 
       {/* Trusted tag */}
-      <div className="relative z-10 flex justify-center pb-8 px-4">
-        <span
-          className="text-xs sm:text-sm px-3 sm:px-4 py-1.5 rounded-sm font-medium text-center"
-          style={{
-            border: `1px solid var(--border-default)`,
-            color: "var(--text-secondary)",
-            backgroundColor: "var(--background)",
-          }}
-        >
-          Trusted by leaders in 50+ industries
-        </span>
-      </div>
     </section>
   );
 }
