@@ -4,6 +4,7 @@ import Image from "next/image";
 import choose from "@/assets/images/client/client.png";
 import { features } from "@/contstant";
 import { CheckCircle } from "./CheckIcon";
+import Button from "../../Button";
 
 export default function ChooseUs() {
   return (
@@ -44,21 +45,23 @@ export default function ChooseUs() {
               ))}
             </ul>
             <div>
-              <button
-                className="text-white text-sm font-semibold px-7 py-3 rounded-lg transition-all duration-200 hover:scale-105 flex items-center gap-2"
-                style={{ backgroundColor: "var(--primary)" }}
+              <Button
+                size="md"
+                icon={
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M3 8h10M9 4l4 4-4 4"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                }
+                iconPosition="right"
               >
                 Schedule A Meeting
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path
-                    d="M3 8h10M9 4l4 4-4 4"
-                    stroke="white"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
+              </Button>
             </div>
           </div>
           <div className="relative flex items-end justify-center overflow-hidden">

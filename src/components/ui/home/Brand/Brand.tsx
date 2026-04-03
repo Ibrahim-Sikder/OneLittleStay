@@ -1,8 +1,7 @@
 "use client";
-
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, FreeMode } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import brand from "@/assets/images/company/brand.svg";
 import brand2 from "@/assets/images/company/brand2.svg";
 import brand3 from "@/assets/images/company/brand3.svg";
@@ -11,11 +10,9 @@ import brand5 from "@/assets/images/company/brand5.svg";
 import brand6 from "@/assets/images/company/brand6.svg";
 import brand7 from "@/assets/images/company/brand7.svg";
 import Container from "@/components/container";
-
 import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/autoplay";
 import "./Brand.css";
+
 const companies = [
   { name: "airbnb", logo: brand, alt: "Airbnb logo" },
   { name: "Booking.com", logo: brand2, alt: "Booking.com logo" },
@@ -26,75 +23,84 @@ const companies = [
   { name: "HomeToGo", logo: brand7, alt: "HomeToGo logo" },
 ];
 
+// দুইবার duplicate করো যাতে loop smooth হয়
+const duplicated = [...companies, ...companies];
+
 export default function Brand() {
   return (
     <section className="w-full mt-8 md:mt-12 lg:mt-16 bg-white">
-      <p className="text-center text-xs sm:text-sm md:text-base lg:text-lg font-semibold px-4">
+      {/* Heading */}
+      <p
+        className="text-center text-xs sm:text-sm md:text-base font-semibold px-4"
+        style={{ color: "var(--text-secondary)" }}
+      >
         Trusted by leaders in 50+ industries
       </p>
 
-      <div className="bg-light mt-4 md:mt-6 lg:mt-8 py-4 md:py-5 lg:py-6">
-        <Container>
-          <div className="relative">
-            <div className="absolute left-0 top-0 bottom-0 w-8 md:w-12 bg-gradient-to-r from-light to-transparent z-10 pointer-events-none"></div>
+      {/* Slider wrapper */}
+      <div
+        className="mt-4 md:mt-6 py-4 md:py-5 lg:py-6"
+        style={{ backgroundColor: "var(--bg-light, #f9f9f9)" }}
+      >
+        <div className="relative w-full overflow-hidden">
+          {/* Left fade */}
+          <div
+            className="absolute left-0 top-0 bottom-0 z-10 pointer-events-none"
+            style={{
+              width: "clamp(40px, 8vw, 100px)",
+              background:
+                "linear-gradient(to right, var(--bg-light, #f9f9f9), transparent)",
+            }}
+          />
+          {/* Right fade */}
+          <div
+            className="absolute right-0 top-0 bottom-0 z-10 pointer-events-none"
+            style={{
+              width: "clamp(40px, 8vw, 100px)",
+              background:
+                "linear-gradient(to left, var(--bg-light, #f9f9f9), transparent)",
+            }}
+          />
 
-            <div className="absolute right-0 top-0 bottom-0 w-8 md:w-12 bg-gradient-to-l from-light to-transparent z-10 pointer-events-none"></div>
-
-            <Swiper
-              modules={[Autoplay, FreeMode]}
-              spaceBetween={16}
-              slidesPerView="auto"
-              freeMode={{
-                enabled: true,
-                sticky: false,
-                momentum: true,
-                momentumBounce: true,
-                momentumBounceRatio: 1,
-              }}
-              autoplay={{
-                delay: 0,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true,
-                stopOnLastSlide: false,
-              }}
-              speed={5000}
-              loop={true}
-              breakpoints={{
-                320: {
-                  spaceBetween: 12,
-                },
-                640: {
-                  spaceBetween: 20,
-                },
-                768: {
-                  spaceBetween: 24,
-                },
-                1024: {
-                  spaceBetween: 32,
-                },
-              }}
-              className="trusted-swiper"
-            >
-              {companies.map((company) => (
-                <SwiperSlide key={company.name}>
-                  <div className="flex items-center justify-center px-2">
-                    <Image
-                      src={company.logo}
-                      alt={company.alt}
-                      width={120}
-                      height={40}
-                      className="w-auto h-5 sm:h-6 md:h-7 lg:h-8 xl:h-9 object-contain opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-105 cursor-pointer"
-                      priority={
-                        company.name === "airbnb" ||
-                        company.name === "Booking.com"
-                      }
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        </Container>
+          <Swiper
+            modules={[Autoplay]}
+            slidesPerView="auto"
+            spaceBetween={0}
+            loop={true}
+            allowTouchMove={true}
+            autoplay={{
+              delay: 0,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            speed={4000}
+            className="trusted-swiper"
+          >
+            {duplicated.map((company, index) => (
+              <SwiperSlide key={`${company.name}-${index}`}>
+                <div
+                  className="flex items-center justify-center"
+                  style={{
+                    padding: "0 clamp(16px, 3vw, 40px)",
+                  }}
+                >
+                  <Image
+                    src={company.logo}
+                    alt={company.alt}
+                    width={120}
+                    height={40}
+                    className="object-contain opacity-60 hover:opacity-100 transition-all duration-300 hover:scale-105 cursor-pointer"
+                    style={{
+                      width: "auto",
+                      height: "clamp(18px, 3vw, 36px)",
+                    }}
+                    priority={index < 2}
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
     </section>
   );

@@ -7,6 +7,7 @@ import logo4 from "@/assets/images/logo/logo5.png";
 import dot from "@/assets/images/dot/dot.png";
 import dot2 from "@/assets/images/dot/dot2.png";
 import Image from "next/image";
+import Button from "../Button";
 
 export default function HeroSection() {
   return (
@@ -15,11 +16,10 @@ export default function HeroSection() {
       style={{
         background: "#ffffff",
         paddingTop: "clamp(40px, 10vw, 75px)",
-        paddingBottom: "clamp(25px, 10vw, 94px)",
+        paddingBottom: "clamp(25px, 10vw, 77px)",
         minHeight: "clamp(350px, 45vh, 550px)",
       }}
     >
-      {/* Top pink gradient fade only — no center glow */}
       <div
         className="absolute top-0 left-0 right-0 pointer-events-none"
         style={{
@@ -30,7 +30,6 @@ export default function HeroSection() {
         }}
       />
 
-      {/* Grid — smaller tighter cells to match design */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -41,8 +40,6 @@ export default function HeroSection() {
           opacity: 0.65,
         }}
       />
-
-      {/* Top-left: Airbnb - responsive positioning */}
       <div
         className="absolute hidden sm:flex -rotate-12"
         style={{
@@ -62,7 +59,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Top-right: Booking - responsive positioning */}
       <div
         className="absolute hidden sm:flex rotate-6"
         style={{
@@ -82,7 +78,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Bottom-left: Vrbo - responsive positioning */}
       <div
         className="absolute hidden sm:flex -rotate-6"
         style={{
@@ -102,7 +97,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Bottom-right: Tripadvisor - responsive positioning */}
       <div
         className="absolute hidden sm:flex rotate-12"
         style={{
@@ -121,8 +115,6 @@ export default function HeroSection() {
           />
         </div>
       </div>
-
-      {/* Hero content - fully responsive with improved spacing */}
       <div
         className="relative flex flex-col items-center justify-center text-center px-4 sm:px-6"
         style={{
@@ -154,7 +146,7 @@ export default function HeroSection() {
         <h2
           className="font-normal leading-tight px-2"
           style={{
-            fontSize: "clamp(22px, 4.2vw, 30px)",
+            fontSize: "clamp(18px, 4.2vw, 30px)",
             color: "var(--text-primary)",
             marginBottom: "clamp(20px, 4vw, 24px)",
           }}
@@ -180,24 +172,18 @@ export default function HeroSection() {
           aliquip ex ea commodo consequat.
         </p>
 
-        <Link
+        <Button
           href="#"
-          className="inline-flex items-center gap-2 font-semibold text-white rounded-lg transition-all duration-200 hover:scale-105 active:scale-95"
-          style={{
-            backgroundColor: "var(--primary)",
-            padding: "clamp(11px, 3vw, 13px) clamp(28px, 6vw, 34px)",
-            fontSize: "clamp(14px, 3.5vw, 15px)",
-            marginBottom: "18px",
-          }}
-          onMouseEnter={(e) =>
-            (e.currentTarget.style.backgroundColor = "var(--primary-dark)")
-          }
-          onMouseLeave={(e) =>
-            (e.currentTarget.style.backgroundColor = "var(--primary)")
-          }
+          size="custom"
+          customPadding="clamp(11px, 3vw, 13px) clamp(28px, 6vw, 34px)"
+          customFontSize="clamp(14px, 3.5vw, 15px)"
+          icon={<span>→</span>}
+          iconPosition="right"
+          style={{ marginBottom: "18px" }}
+          className="py-2 px-5 mb-5"
         >
-          Schedule A Meeting <span>→</span>
-        </Link>
+          Schedule A Meeting
+        </Button>
 
         <Link
           href="#"

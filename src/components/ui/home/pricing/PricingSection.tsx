@@ -4,6 +4,7 @@ import price from "@/assets/images/tools/price.png";
 import Image from "next/image";
 import { plans } from "@/data/price";
 import CheckIcon from "./CheckIcon";
+import Button from "../../Button";
 
 export default function PricingSection() {
   const [yearly, setYearly] = useState(false);
@@ -131,7 +132,7 @@ export default function PricingSection() {
                 / Month
               </span>
             </div>
-            <button
+            {/* <button
               className={`w-full py-2.5 sm:py-3 rounded-lg font-semibold text-xs sm:text-sm mb-5 sm:mb-7 border-2 transition-all duration-200 ${
                 plan.highlight
                   ? "bg-white border-white hover:bg-pink-50"
@@ -144,7 +145,24 @@ export default function PricingSection() {
               }
             >
               Get Started Now
-            </button>
+            </button> */}
+            <Button
+              variant={plan.highlight ? "outline" : "outline"}
+              size="md"
+              fullWidth
+              style={{
+                backgroundColor: plan.highlight ? "white" : "white",
+                color: "var(--primary)",
+                borderColor: "var(--primary)",
+              }}
+              className={
+                plan.highlight
+                  ? "hover:bg-pink-50 mb-5 sm:mb-7"
+                  : "hover:bg-pink-50 mb-5 sm:mb-7"
+              }
+            >
+              Get Started Now
+            </Button>
             <ul className="flex flex-col gap-2 sm:gap-3">
               {plan.features.map((f, i) => (
                 <li key={i} className="flex items-center gap-2 sm:gap-3">

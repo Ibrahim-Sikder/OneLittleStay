@@ -1,46 +1,14 @@
 .trusted-swiper {
-  overflow: visible !important;
+  width: 100%;
+  overflow: hidden;
 }
 
 .trusted-swiper .swiper-wrapper {
+  align-items: center;
   transition-timing-function: linear !important;
 }
 
 .trusted-swiper .swiper-slide {
   width: auto !important;
-}
-
-.trusted-swiper-container {
-  position: relative;
-}
-
-.trusted-swiper-container::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 50px;
-  background: linear-gradient(to right, rgb(243 244 246), transparent);
-  z-index: 10;
-  pointer-events: none;
-}
-
-.trusted-swiper-container::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 50px;
-  background: linear-gradient(to left, rgb(243 244 246), transparent);
-  z-index: 10;
-  pointer-events: none;
-}
-
-@media (min-width: 768px) {
-  .trusted-swiper-container::before,
-  .trusted-swiper-container::after {
-    width: 80px;
-  }
+  flex-shrink: 0;
 }

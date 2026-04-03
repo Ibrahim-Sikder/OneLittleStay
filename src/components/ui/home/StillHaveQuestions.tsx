@@ -3,6 +3,7 @@
 import Container from "@/components/container";
 import client from "@/assets/images/client/avatar.png";
 import Image from "next/image";
+import Button from "../Button";
 
 export default function StillHaveQuestions() {
   return (
@@ -32,18 +33,9 @@ export default function StillHaveQuestions() {
             our friendly team.
           </p>
 
-          <button
-            className="text-white text-sm font-semibold px-8 py-3 rounded-lg transition-all duration-200 hover:scale-105"
-            style={{ backgroundColor: "var(--primary)" }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.backgroundColor = "var(--primary-dark)")
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.backgroundColor = "var(--primary)")
-            }
-          >
+          <Button size="md" variant="primary">
             Get in touch
-          </button>
+          </Button>
         </div>
       </div>
     </Container>

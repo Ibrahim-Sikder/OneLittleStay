@@ -12,7 +12,6 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("Home");
 
-  // Close mobile menu when window resizes to desktop
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
@@ -23,7 +22,6 @@ export default function Header() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -42,7 +40,6 @@ export default function Header() {
         style={{ borderColor: "var(--border-light)" }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-full flex items-center justify-between">
-          {/* Logo */}
           <div className="flex items-center">
             <Image
               src={logo}
@@ -82,7 +79,7 @@ export default function Header() {
           {/* Desktop CTA Button */}
           <Link
             href="#"
-            className="hidden md:flex text-white text-sm font-semibold px-5 py-2.5 rounded-md items-center gap-2 transition-all duration-200 hover:scale-105 bg-primary hover:bg-primary-dark"
+            className="hidden md:flex text-white text-sm font-semibold px-4 py-2 rounded-md items-center gap-2 transition-all duration-200 hover:scale-105 bg-primary hover:bg-primary-dark"
           >
             Schedule A Meeting <span className="text-base">→</span>
           </Link>
@@ -105,7 +102,6 @@ export default function Header() {
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-40 md:hidden">
-          {/* Backdrop */}
           <div
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             onClick={() => setIsMobileMenuOpen(false)}
@@ -141,13 +137,13 @@ export default function Header() {
 
               {/* Mobile CTA Button */}
               <div
-                className="px-6 pt-4 mt-4 border-t"
+                className="px-2 pt-4 mt-4 border-t"
                 style={{ borderColor: "var(--border-light)" }}
               >
                 <Link
                   href="#"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center justify-center gap-2 text-white text-sm font-semibold px-5 py-2.5 rounded-md transition-all duration-200 w-full bg-primary hover:bg-primary-dark"
+                  className="flex items-center justify-center gap-2 text-white text-sm font-semibold px-2 py-2 rounded-md transition-all duration-200 w-full bg-primary hover:bg-primary-dark"
                 >
                   Schedule A Meeting <span className="text-base">→</span>
                 </Link>
