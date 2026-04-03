@@ -12,7 +12,7 @@ export default function FAQSection() {
       <section
         aria-labelledby="faq-heading"
         role="region"
-        className=" py-10 md:py-16 px-6 md:px-36"
+        className="py-10 md:py-16 px-6 md:px-36"
         style={{ backgroundColor: "var(--bg-gray)" }}
       >
         <div className="max-w-7xl mx-auto">
@@ -37,25 +37,26 @@ export default function FAQSection() {
             {faqs.map((faq, i) => (
               <div
                 key={i}
-                className="border-b last:border-b-0"
-                style={{ borderColor: "var(--border-default)" }}
+                className="last:border-b-0"
+                style={{
+                  borderBottom: `1px solid var(--primary-light)`,
+                }}
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === i ? -1 : i)}
                   aria-expanded={openIndex === i}
-                  className="w-full flex items-center justify-between py-5 text-left group focus:outline-none focus:ring-0 focus:ring-offset-0 active:outline-none active:ring-0 transition-colors"
+                  className="cursor-pointer w-full flex items-center justify-between py-5 text-left group focus:outline-none focus:ring-0 focus:ring-offset-0 active:outline-none active:ring-0 transition-colors"
                 >
                   <span
-                    className="text-sm md:text-base font-medium transition-colors duration-200 pr-2"
+                    className="text-sm md:text-base font-medium transition-colors duration-200 pr-2 cursor-pointer"
                     style={{ color: "var(--text-primary)" }}
                   >
                     {faq.question}
                   </span>
                   <span
-                    className={`w-6 h-6 md:w-7 md:h-7 flex items-center justify-center flex-shrink-0 ml-2 md:ml-4 transition-transform duration-300 ${
+                    className={`w-6 h-6 md:w-7 md:h-7 cursor-pointer flex items-center justify-center flex-shrink-0 ml-2 md:ml-4 transition-transform duration-300 ${
                       openIndex === i ? "rotate-180" : "rotate-0"
                     }`}
-                    style={{ borderColor: "var(--primary)" }}
                   >
                     {openIndex === i ? (
                       <svg width="8" height="2" viewBox="0 0 12 2" fill="none">
