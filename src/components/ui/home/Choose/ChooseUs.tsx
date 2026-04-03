@@ -16,11 +16,23 @@ export default function ChooseUs() {
         className="max-w-5xl mx-auto rounded-3xl overflow-hidden relative"
         style={{ background: "#fce4ec", minHeight: "420px" }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 h-full">
-          <div className="flex flex-col justify-center p-6 sm:p-8 md:p-10 lg:p-12">
+        <div className="pt-5 md:pt-0 grid grid-cols-1 md:grid-cols-2 h-full">
+          {/* Image - First on mobile, Second on desktop */}
+          <div className="relative flex items-end justify-center overflow-hidden order-first md:order-last">
+            <Image
+              src={choose}
+              alt="Client illustration"
+              width={500}
+              height={500}
+              className="object-contain w-full h-auto"
+            />
+          </div>
+
+          {/* Content - Second on mobile, First on desktop */}
+          <div className="flex flex-col justify-center p-6 sm:p-8 md:p-10 lg:p-12 order-last md:order-first">
             <h2
               id="chooseus-heading"
-              className="text-2xl sm:text-3xl font-bold mb-4 leading-tight"
+              className="text-xl md:text-3xl font-bold mb-4 leading-tight"
               style={{ color: "var(--text-primary)" }}
             >
               Few Reasons Why you
@@ -67,15 +79,6 @@ export default function ChooseUs() {
                 Schedule A Meeting
               </Button>
             </div>
-          </div>
-          <div className="relative flex items-end justify-center overflow-hidden">
-            <Image
-              src={choose}
-              alt="Client illustration"
-              width={500}
-              height={500}
-              className="object-contain w-full h-auto"
-            />
           </div>
         </div>
       </div>
