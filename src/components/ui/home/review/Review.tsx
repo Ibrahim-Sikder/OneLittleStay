@@ -10,10 +10,13 @@ import { Stars } from "./star";
 
 export default function Review() {
   return (
-    <section className="w-full bg-white pb-12 md:pb-16 px-4 sm:px-6 overflow-hidden">
-      {/* Header */}
+    <section
+      aria-labelledby="review-heading"
+      className="w-full bg-white pb-12 md:pb-16 px-4 sm:px-6 overflow-hidden"
+    >
       <div className="text-center max-w-2xl mx-auto">
         <h2
+          id="review-heading"
           className="text-xl sm:text-2xl md:text-4xl font-bold mb-4"
           style={{ color: "var(--text-primary)" }}
         >
@@ -21,7 +24,7 @@ export default function Review() {
           <span style={{ color: "var(--primary)" }}>Review</span>
         </h2>
         <p
-          className="text-xs md:text-sm leading-relaxed"
+          className="text-sm md:text-base leading-relaxed"
           style={{ color: "var(--text-secondary)" }}
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -31,8 +34,7 @@ export default function Review() {
         </p>
       </div>
 
-      {/* Swiper Slider */}
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto mt-8">
         <Swiper
           modules={[Autoplay]}
           spaceBetween={24}
@@ -44,29 +46,20 @@ export default function Review() {
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
-          loop={true}
+          loop
           breakpoints={{
-            640: {
-              slidesPerView: 1.2,
-              spaceBetween: 16,
-            },
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-            1024: {
-              slidesPerView: 3,
-              spaceBetween: 24,
-            },
+            640: { slidesPerView: 1.2, spaceBetween: 16 },
+            768: { slidesPerView: 2, spaceBetween: 20 },
+            1024: { slidesPerView: 3, spaceBetween: 24 },
           }}
           className="review-slider"
+          role="list"
         >
           {reviews.map((r, i) => (
-            <SwiperSlide key={i}>
+            <SwiperSlide key={i} role="listitem">
               <div className="review-card rounded-2xl transition-all duration-700">
-                {/* Mobile layout (image on top) */}
-                <div className="block md:hidden">
-                  <div className="flex flex-col items-center text-center">
+                <div className="block md:hidden text-center">
+                  <div className="flex flex-col items-center">
                     <div
                       className="w-14 h-14 rounded-full overflow-hidden mb-3"
                       style={{ backgroundColor: "var(--border-default)" }}
@@ -79,28 +72,28 @@ export default function Review() {
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="w-full">
-                      <h4
-                        className="font-bold text-base"
-                        style={{ color: "var(--text-primary)" }}
-                      >
-                        {r.name}
-                      </h4>
-                      <p
-                        className="text-xs md:text-sm leading-relaxed mt-1"
-                        style={{ color: "var(--text-secondary)" }}
-                      >
-                        {r.text}
-                      </p>
-                      <div className="flex justify-center mt-2">
-                        <Stars count={r.rating} />
-                      </div>
+                    <h4
+                      className="font-bold text-base"
+                      style={{ color: "var(--text-primary)" }}
+                    >
+                      {r.name}
+                    </h4>
+                    <p
+                      className="text-sm leading-relaxed mt-1"
+                      style={{ color: "var(--text-secondary)" }}
+                    >
+                      {r.text}
+                    </p>
+                    <div
+                      className="flex justify-center mt-2"
+                      aria-label={`Rated ${r.rating} out of 5`}
+                    >
+                      <Stars count={r.rating} />
                     </div>
                   </div>
                 </div>
 
-                {/* Desktop layout (image on left) */}
-                <div className="hidden md:flex md:gap-4">
+                <div className="hidden md:flex md:gap-6 items-center">
                   <div className="flex-shrink-0">
                     <div
                       className="w-14 h-14 rounded-full overflow-hidden"
@@ -128,7 +121,10 @@ export default function Review() {
                     >
                       {r.text}
                     </p>
-                    <Stars count={r.rating} />
+                    <Stars
+                      count={r.rating}
+                      aria-label={`Rated ${r.rating} out of 5`}
+                    />
                   </div>
                 </div>
               </div>

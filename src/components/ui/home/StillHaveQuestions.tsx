@@ -8,7 +8,7 @@ import Button from "../Button";
 export default function StillHaveQuestions() {
   return (
     <Container>
-      <div className="px-4 sm:px-6 py-10 ">
+      <div className="px-4 sm:px-6 py-10">
         <div
           className="rounded-2xl flex flex-col items-center text-center py-10 px-6 sm:px-8"
           style={{
@@ -17,16 +17,17 @@ export default function StillHaveQuestions() {
             boxShadow: "0 2px 12px rgba(0,0,0,0.04)",
           }}
         >
-          <Image src={client} alt="Client" />
+          <Image src={client} alt="Friendly support agent" />
+
           <h3
-            className="text-xl font-bold mb-2 mt-3"
+            className="text-xl md:text-2xl font-bold mb-2 mt-3"
             style={{ color: "var(--text-primary)" }}
           >
             Still have Questions?
           </h3>
 
           <p
-            className="text-sm mb-6"
+            className="text-sm md:text-base mb-6 leading-relaxed"
             style={{ color: "var(--text-secondary)" }}
           >
             Can&apos;t find the answer you&apos;re looking for? Please chat to

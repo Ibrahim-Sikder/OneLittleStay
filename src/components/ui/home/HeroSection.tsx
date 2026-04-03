@@ -1,171 +1,72 @@
 "use client";
+
 import Link from "next/link";
+import Image from "next/image";
+import Button from "../Button";
 import logo from "@/assets/images/logo/logo2.png";
 import logo2 from "@/assets/images/logo/logo3.png";
 import logo3 from "@/assets/images/logo/logo4.png";
 import logo4 from "@/assets/images/logo/logo5.png";
 import dot from "@/assets/images/dot/dot.png";
 import dot2 from "@/assets/images/dot/dot2.png";
-import Image from "next/image";
-import Button from "../Button";
 
 export default function HeroSection() {
   return (
-    <section
-      className="relative w-full overflow-hidden"
-      style={{
-        background: "#ffffff",
-        paddingTop: "clamp(40px, 10vw, 75px)",
-        paddingBottom: "clamp(25px, 10vw, 77px)",
-        minHeight: "clamp(350px, 45vh, 550px)",
-      }}
-    >
-      <div
-        className="absolute top-0 left-0 right-0 pointer-events-none"
-        style={{
-          height: "100px",
-          background:
-            "linear-gradient(to bottom, rgba(236, 60, 106, 0.09) 0%, rgba(255,255,255,0) 100%)",
-          zIndex: 1,
-        }}
-      />
+    <section className="relative w-full overflow-hidden bg-white py-[clamp(40px,10vw,70px)] min-h-[clamp(350px,45vh,550px)]">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[100px] bg-gradient-to-b from-[#ec3c6a14] to-transparent z-[1]" />
 
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          zIndex: 2,
-          backgroundImage:
-            "linear-gradient(to right, #dcdcdc 1px, transparent 1px), linear-gradient(to bottom, #dcdcdc 1px, transparent 1px)",
-          backgroundSize: "clamp(60px, 8vw, 90px) clamp(60px, 7vw, 80px)",
-          opacity: 0.65,
-        }}
-      />
-      <div
-        className="absolute hidden sm:flex -rotate-12"
-        style={{
-          top: "clamp(8%, 13%, 15%)",
-          left: "clamp(15%, 25%, 30%)",
-          zIndex: 5,
-        }}
-      >
-        <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-24 lg:h-24">
-          <Image
-            src={logo}
-            alt="Airbnb Logo"
-            width={80}
-            height={80}
-            className="w-full h-full object-contain"
-          />
-        </div>
+      <div className="pointer-events-none absolute inset-0 z-[2] opacity-60 bg-[linear-gradient(to_right,#dcdcdc_1px,transparent_1px),linear-gradient(to_bottom,#dcdcdc_1px,transparent_1px)] bg-[size:clamp(60px,8vw,90px)_clamp(60px,7vw,80px)]" />
+
+      <div className="hidden sm:block absolute top-[12%] left-[25%] -rotate-12 z-[5]">
+        <Image
+          src={logo}
+          alt=""
+          aria-hidden="true"
+          className="w-12 md:w-16 lg:w-24 h-auto"
+        />
       </div>
 
-      <div
-        className="absolute hidden sm:flex rotate-6"
-        style={{
-          top: "clamp(8%, 13%, 15%)",
-          right: "clamp(15%, 25%, 30%)",
-          zIndex: 5,
-        }}
-      >
-        <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-24 lg:h-24">
-          <Image
-            src={logo4}
-            alt="Booking Logo"
-            width={80}
-            height={80}
-            className="w-full h-full object-contain"
-          />
-        </div>
+      <div className="hidden sm:block absolute top-[12%] right-[25%] rotate-6 z-[5]">
+        <Image
+          src={logo4}
+          alt=""
+          aria-hidden="true"
+          className="w-12 md:w-16 lg:w-24 h-auto"
+        />
       </div>
 
-      <div
-        className="absolute hidden sm:flex -rotate-6"
-        style={{
-          top: "clamp(70%, 75%, 80%)",
-          left: "clamp(18%, 28%, 32%)",
-          zIndex: 5,
-        }}
-      >
-        <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-[70px] lg:h-[70px]">
-          <Image
-            src={logo3}
-            alt="Vrbo Logo"
-            width={80}
-            height={80}
-            className="w-full h-full object-contain"
-          />
-        </div>
+      <div className="hidden sm:block absolute bottom-[15%] left-[28%] -rotate-6 z-[5]">
+        <Image
+          src={logo3}
+          alt=""
+          aria-hidden="true"
+          className="w-12 md:w-16 lg:w-[70px] h-auto"
+        />
       </div>
 
-      <div
-        className="absolute hidden sm:flex rotate-12"
-        style={{
-          top: "clamp(70%, 75%, 80%)",
-          right: "clamp(18%, 28%, 32%)",
-          zIndex: 5,
-        }}
-      >
-        <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-[70px] lg:h-[70px]">
-          <Image
-            src={logo2}
-            alt="Tripadvisor Logo"
-            width={80}
-            height={80}
-            className="w-full h-full object-contain"
-          />
-        </div>
+      <div className="hidden sm:block absolute bottom-[15%] right-[28%] rotate-12 z-[5]">
+        <Image
+          src={logo2}
+          alt=""
+          aria-hidden="true"
+          className="w-12 md:w-16 lg:w-[70px] h-auto"
+        />
       </div>
-      <div
-        className="relative flex flex-col items-center justify-center text-center px-4 sm:px-6"
-        style={{
-          zIndex: 10,
-          paddingTop: "clamp(30px, 8vw, 60px)",
-          paddingBottom: "clamp(30px, 6vw, 40px)",
-        }}
-      >
-        <div className="hidden sm:block mb-5 lg:w-3 lg:h-3">
-          <Image
-            src={dot}
-            alt="dot"
-            width={50}
-            height={50}
-            className="w-full h-full object-contain"
-          />
-        </div>
-        <h1
-          className="font-bold leading-tight px-2"
-          style={{
-            fontSize: "clamp(24px, 4.8vw, 40px)",
-            color: "var(--text-primary)",
-            marginBottom: "clamp(2px, 1vw, 4px)",
-          }}
-        >
-          Airbnb Assistants For
+
+      <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 py-[clamp(30px,8vw,60px)]">
+        <Image
+          src={dot}
+          alt=""
+          aria-hidden="true"
+          className="hidden sm:block w-3 h-3 mb-5"
+        />
+
+        <h1 className="text-[clamp(24px,4.8vw,40px)] font-semibold leading-[1.2] text-primary mb-3">
+          Airbnb Assistants For <br />
+          <span className="font-normal text-xl ">Property Management</span>
         </h1>
 
-        <h2
-          className="font-normal leading-tight px-2"
-          style={{
-            fontSize: "clamp(18px, 4.2vw, 30px)",
-            color: "var(--text-primary)",
-            marginBottom: "clamp(20px, 4vw, 24px)",
-          }}
-        >
-          Property Management
-        </h2>
-
-        <p
-          style={{
-            maxWidth: "min(530px, 90vw)",
-            fontSize: "clamp(14px, 3.5vw, 15px)",
-            lineHeight: "1.6",
-            color: "var(--text-secondary)",
-            textAlign: "center",
-            marginBottom: "clamp(28px, 6vw, 34px)",
-            paddingLeft: "clamp(16px, 5vw, 0)",
-            paddingRight: "clamp(16px, 5vw, 0)",
-          }}
-        >
+        <p className="max-w-[530px] text-[clamp(14px,3.5vw,15px)] leading-[1.6] text-secondary mb-[clamp(28px,6vw,34px)] px-[clamp(16px,5vw,32px)]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -175,32 +76,28 @@ export default function HeroSection() {
         <Button
           href="#"
           size="custom"
-          customPadding="clamp(11px, 3vw, 13px) clamp(28px, 6vw, 34px)"
-          customFontSize="clamp(14px, 3.5vw, 15px)"
+          customPadding="clamp(11px,3vw,13px) clamp(28px,6vw,34px)"
+          customFontSize="clamp(14px,3.5vw,15px)"
           icon={<span>→</span>}
           iconPosition="right"
-          style={{ marginBottom: "18px" }}
-          className="py-2 px-5 mb-5"
+          className="mb-4 py-2 md:py-3 px-3 md:px-4 text-sm "
         >
           Schedule A Meeting
         </Button>
 
         <Link
           href="#"
-          className="text-sm font-medium underline underline-offset-4 hover:opacity-70 transition-opacity"
-          style={{ color: "var(--text-primary)" }}
+          className="text-sm text-primary underline underline-offset-4 hover:opacity-70 transition-opacity"
         >
           See Pricing
         </Link>
-        <div className="hidden sm:block mt-5  lg:w-3 lg:h-3 ">
-          <Image
-            src={dot2}
-            alt="dot2"
-            width={50}
-            height={50}
-            className=" w-full h-full object-contain"
-          />
-        </div>
+
+        <Image
+          src={dot2}
+          alt=""
+          aria-hidden="true"
+          className="hidden sm:block w-3 h-3 mt-5"
+        />
       </div>
     </section>
   );
