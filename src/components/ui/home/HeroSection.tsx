@@ -1,114 +1,20 @@
 "use client";
 import Link from "next/link";
+import logo from "@/assets/images/logo/logo2.png";
+import logo2 from "@/assets/images/logo/logo3.png";
+import logo3 from "@/assets/images/logo/logo4.png";
+import logo4 from "@/assets/images/logo/logo5.png";
+import Image from "next/image";
 
 const dots = [
   { color: "#6366f1", top: "26%", left: "4%", size: "10px" },
   { color: "#f87171", top: "60%", left: "6%", size: "8px" },
-  { color: "#FACC15", top: "82%", left: "5%", size: "8px" },
-  { color: "#4ADE80", top: "16%", left: "44%", size: "10px" },
-  { color: "#22D3EE", top: "90%", left: "46%", size: "10px" },
+  { color: "#FACC15", top: "85%", left: "5%", size: "8px" },
+  { color: "#4ADE80", top: "16%", left: "47%", size: "10px" },
+  { color: "#22D3EE", top: "92%", left: "48%", size: "10px" },
   { color: "#FACC15", top: "38%", right: "3%", size: "9px" },
   { color: "#1e293b", top: "80%", right: "4%", size: "10px" },
 ];
-
-const AirbnbIcon = () => (
-  <div
-    style={{
-      width: "80px",
-      height: "80px",
-      borderRadius: "20px",
-      background: "linear-gradient(145deg, #FF6B6B, #e84043)",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      boxShadow: "0 8px 28px rgba(0,0,0,0.15)",
-    }}
-  >
-    <svg width="44" height="44" viewBox="0 0 32 32" fill="none">
-      <path
-        d="M16 3C10.2 3 7 8.5 7 12.5c0 2.7 1.1 5 2.8 6.8L16 29l6.2-9.7C23.9 17.5 25 15.2 25 12.5 25 8.5 21.8 3 16 3zm0 13a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"
-        fill="white"
-      />
-    </svg>
-  </div>
-);
-
-const BookingIcon = () => (
-  <div
-    style={{
-      width: "80px",
-      height: "80px",
-      borderRadius: "20px",
-      background: "linear-gradient(145deg, #1a3e8a, #003b8f)",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      boxShadow: "0 8px 28px rgba(0,0,0,0.15)",
-      color: "white",
-      fontSize: "30px",
-      fontWeight: "900",
-      letterSpacing: "-1px",
-      fontFamily: "Arial, sans-serif",
-    }}
-  >
-    B.
-  </div>
-);
-
-const VrboIcon = () => (
-  <div
-    style={{
-      width: "80px",
-      height: "80px",
-      borderRadius: "20px",
-      background: "linear-gradient(145deg, #1b1c4b, #252660)",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      boxShadow: "0 8px 28px rgba(0,0,0,0.15)",
-    }}
-  >
-    <svg width="58" height="32" viewBox="0 0 58 32" fill="none">
-      <text
-        x="29"
-        y="22"
-        textAnchor="middle"
-        fontSize="16"
-        fontWeight="700"
-        fill="white"
-        fontFamily="Arial, sans-serif"
-      >
-        vrbo
-      </text>
-    </svg>
-  </div>
-);
-
-const TripadvisorIcon = () => (
-  <div
-    style={{
-      width: "80px",
-      height: "80px",
-      borderRadius: "20px",
-      background: "linear-gradient(145deg, #00c49a, #00AF87)",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      boxShadow: "0 8px 28px rgba(0,0,0,0.15)",
-    }}
-  >
-    <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
-      <circle cx="16" cy="26" r="9" fill="white" />
-      <circle cx="34" cy="26" r="9" fill="white" />
-      <circle cx="16" cy="26" r="5" fill="#00AF87" />
-      <circle cx="34" cy="26" r="5" fill="#00AF87" />
-      <circle cx="16" cy="26" r="2.5" fill="#111" />
-      <circle cx="34" cy="26" r="2.5" fill="#111" />
-      <rect x="21" y="23" width="8" height="5" rx="1" fill="white" />
-      <polygon points="25,14 20,20 30,20" fill="#FF3B30" />
-    </svg>
-  </div>
-);
 
 export default function HeroSection() {
   return (
@@ -116,31 +22,31 @@ export default function HeroSection() {
       className="relative w-full overflow-hidden"
       style={{
         background: "#ffffff",
-        paddingTop: "70px",
-        paddingBottom: "70px",
-        minHeight: "500px",
+        paddingTop: "clamp(40px, 10vw, 85px)",
+        paddingBottom: "clamp(40px, 10vw, 40px)",
+        minHeight: "530px",
       }}
     >
-      {/* Top pink gradient fade — only from top, no center glow */}
+      {/* Top pink gradient fade only — no center glow */}
       <div
         className="absolute top-0 left-0 right-0 pointer-events-none"
         style={{
-          height: "110px",
+          height: "100px",
           background:
-            "linear-gradient(to bottom, rgba(236, 60, 106, 0.10) 0%, rgba(255,255,255,0) 100%)",
+            "linear-gradient(to bottom, rgba(236, 60, 106, 0.09) 0%, rgba(255,255,255,0) 100%)",
           zIndex: 1,
         }}
       />
 
-      {/* Large grid background */}
+      {/* Grid — smaller tighter cells to match design */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           zIndex: 2,
           backgroundImage:
-            "linear-gradient(to right, #e2e2e2 1px, transparent 1px), linear-gradient(to bottom, #e2e2e2 1px, transparent 1px)",
-          backgroundSize: "130px 110px",
-          opacity: 0.7,
+            "linear-gradient(to right, #dcdcdc 1px, transparent 1px), linear-gradient(to bottom, #dcdcdc 1px, transparent 1px)",
+          backgroundSize: "clamp(60px, 8vw, 90px) clamp(60px, 7vw, 80px)",
+          opacity: 0.65,
         }}
       />
 
@@ -150,8 +56,8 @@ export default function HeroSection() {
           key={i}
           className="absolute rounded-full hidden sm:block"
           style={{
-            width: dot.size,
-            height: dot.size,
+            width: `clamp(${dot.size}, 1.5vw, ${dot.size})`,
+            height: `clamp(${dot.size}, 1.5vw, ${dot.size})`,
             backgroundColor: dot.color,
             top: dot.top,
             left: dot.left ?? undefined,
@@ -163,65 +69,81 @@ export default function HeroSection() {
 
       {/* Top-left: Airbnb */}
       <div
-        className="absolute hidden sm:flex"
-        style={{
-          top: "12%",
-          left: "13%",
-          transform: "rotate(-12deg)",
-          zIndex: 5,
-        }}
+        className="absolute hidden sm:flex -rotate-12"
+        style={{ top: "13%", left: "25%", zIndex: 5 }}
       >
-        <AirbnbIcon />
+        <div className="w-12 h-12 md:w-16 md:h-16 lg:w-24 lg:h-24">
+          <Image
+            src={logo}
+            alt="Airbnb Logo"
+            width={80}
+            height={80}
+            className="w-full h-full object-contain"
+          />
+        </div>
       </div>
 
       {/* Top-right: Booking */}
       <div
-        className="absolute hidden sm:flex"
-        style={{
-          top: "12%",
-          right: "13%",
-          transform: "rotate(6deg)",
-          zIndex: 5,
-        }}
+        className="absolute hidden sm:flex rotate-6"
+        style={{ top: "13%", right: "25%", zIndex: 5 }}
       >
-        <BookingIcon />
+        <div className="w-12 h-12 md:w-16 md:h-16 lg:w-24 lg:h-24">
+          <Image
+            src={logo4}
+            alt="Booking Logo"
+            width={80}
+            height={80}
+            className="w-full h-full object-contain"
+          />
+        </div>
       </div>
 
       {/* Bottom-left: Vrbo */}
       <div
-        className="absolute hidden sm:flex"
-        style={{
-          top: "68%",
-          left: "16%",
-          transform: "rotate(-6deg)",
-          zIndex: 5,
-        }}
+        className="absolute hidden sm:flex -rotate-6"
+        style={{ top: "75%", left: "28%", zIndex: 5 }}
       >
-        <VrboIcon />
+        <div className="w-12 h-12 md:w-16 md:h-16 lg:w-[70px] lg:h-[70px]">
+          <Image
+            src={logo3}
+            alt="Vrbo Logo"
+            width={80}
+            height={80}
+            className="w-full h-full object-contain"
+          />
+        </div>
       </div>
 
       {/* Bottom-right: Tripadvisor */}
       <div
-        className="absolute hidden sm:flex"
-        style={{
-          top: "68%",
-          right: "16%",
-          transform: "rotate(12deg)",
-          zIndex: 5,
-        }}
+        className="absolute hidden sm:flex rotate-12"
+        style={{ top: "75%", right: "28%", zIndex: 5 }}
       >
-        <TripadvisorIcon />
+        <div className="w-12 h-12 md:w-16 md:h-16 lg:w-[70px] lg:h-[70px]">
+          <Image
+            src={logo2}
+            alt="Tripadvisor Logo"
+            width={80}
+            height={80}
+            className="w-full h-full object-contain"
+          />
+        </div>
       </div>
 
       {/* Hero content */}
       <div
         className="relative flex flex-col items-center justify-center text-center px-4 sm:px-6"
-        style={{ zIndex: 10, paddingTop: "60px", paddingBottom: "40px" }}
+        style={{
+          zIndex: 10,
+          paddingTop: "clamp(30px, 8vw, 60px)",
+          paddingBottom: "clamp(30px, 6vw, 40px)",
+        }}
       >
         <h1
-          className="font-bold leading-tight"
+          className="font-bold leading-tight px-2"
           style={{
-            fontSize: "clamp(30px, 4.8vw, 54px)",
+            fontSize: "clamp(28px, 4.8vw, 54px)",
             color: "var(--text-primary)",
             marginBottom: "4px",
           }}
@@ -230,11 +152,11 @@ export default function HeroSection() {
         </h1>
 
         <h2
-          className="font-normal leading-tight"
+          className="font-normal leading-tight px-2"
           style={{
-            fontSize: "clamp(26px, 4.2vw, 48px)",
+            fontSize: "clamp(24px, 4.2vw, 48px)",
             color: "var(--text-primary)",
-            marginBottom: "24px",
+            marginBottom: "clamp(20px, 4vw, 24px)",
           }}
         >
           Property Management
@@ -242,12 +164,14 @@ export default function HeroSection() {
 
         <p
           style={{
-            maxWidth: "530px",
-            fontSize: "15px",
-            lineHeight: "1.72",
+            maxWidth: "min(530px, 90vw)",
+            fontSize: "clamp(14px, 3.5vw, 15px)",
+            lineHeight: "1.6",
             color: "var(--text-secondary)",
             textAlign: "center",
-            marginBottom: "34px",
+            marginBottom: "clamp(28px, 6vw, 34px)",
+            paddingLeft: "clamp(12px, 4vw, 0)",
+            paddingRight: "clamp(12px, 4vw, 0)",
           }}
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -261,8 +185,8 @@ export default function HeroSection() {
           className="inline-flex items-center gap-2 font-semibold text-white rounded-lg transition-all duration-200 hover:scale-105 active:scale-95"
           style={{
             backgroundColor: "var(--primary)",
-            padding: "13px 34px",
-            fontSize: "15px",
+            padding: "clamp(11px, 3vw, 13px) clamp(28px, 6vw, 34px)",
+            fontSize: "clamp(14px, 3.5vw, 15px)",
             marginBottom: "18px",
           }}
           onMouseEnter={(e) =>
