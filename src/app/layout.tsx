@@ -36,9 +36,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <body className="min-h-screen flex flex-col font-sans antialiased">
-        <a href="#main-content" className="sr-only focus:not-sr-only">
-          Skip to main content
-        </a>
         <Header />
         <main id="main-content" className="flex-1">
           {children}
