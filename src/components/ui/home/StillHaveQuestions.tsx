@@ -8,9 +8,9 @@ import Button from "../Button";
 export default function StillHaveQuestions() {
   return (
     <Container>
-      <div className="px-4 sm:px-6 py-10">
+      <div className="max-w-7xl mx-auto   py-10">
         <div
-          className="rounded-2xl flex flex-col items-center text-center py-10 px-6 sm:px-8"
+          className=" flex flex-col items-center text-center py-10 px-6 sm:px-8"
           style={{
             backgroundColor: "var(--bg-gray)",
             border: `1px solid var(--border-light)`,

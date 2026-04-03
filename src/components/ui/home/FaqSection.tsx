@@ -12,10 +12,10 @@ export default function FAQSection() {
       <section
         aria-labelledby="faq-heading"
         role="region"
-        className="w-full py-10 md:py-16 px-6"
+        className=" py-10 md:py-16 px-6 md:px-36"
         style={{ backgroundColor: "var(--bg-gray)" }}
       >
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2
               id="faq-heading"

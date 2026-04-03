@@ -56,8 +56,8 @@ export default function EasySection() {
               <Image
                 src={step.icon}
                 alt={step.alt}
-                width={80}
-                height={80}
+                width={70}
+                height={70}
                 className="object-contain"
               />
             </div>
