@@ -1,187 +1,254 @@
 "use client";
 import Link from "next/link";
-import logo from "@/assets/images/logo/logo2.png";
-import logo2 from "@/assets/images/logo/logo3.png";
-import logo3 from "@/assets/images/logo/logo4.png";
-import logo4 from "@/assets/images/logo/logo5.png";
-import Image from "next/image";
 
 const dots = [
-  {
-    color: "bg-primary",
-    top: "top-[18%]",
-    left: "left-[5%]",
-    size: "w-2.5 h-2.5",
-  },
-  {
-    color: "bg-primary-light",
-    top: "top-[58%]",
-    left: "left-[7%]",
-    size: "w-2 h-2",
-  },
-  {
-    color: "bg-yellow-400",
-    top: "top-[78%]",
-    left: "left-[11%]",
-    size: "w-2 h-2",
-  },
-  {
-    color: "bg-green-400",
-    top: "top-[22%]",
-    left: "left-[45%]",
-    size: "w-2.5 h-2.5",
-  },
-  {
-    color: "bg-cyan-400",
-    top: "top-[85%]",
-    left: "left-[48%]",
-    size: "w-2.5 h-2.5",
-  },
-  {
-    color: "bg-yellow-400",
-    top: "top-[48%]",
-    right: "right-[5%]",
-    size: "w-2 h-2",
-  },
-  {
-    color: "bg-primary",
-    top: "top-[75%]",
-    right: "right-[6%]",
-    size: "w-2.5 h-2.5",
-  },
+  { color: "#6366f1", top: "26%", left: "4%", size: "10px" },
+  { color: "#f87171", top: "60%", left: "6%", size: "8px" },
+  { color: "#FACC15", top: "82%", left: "5%", size: "8px" },
+  { color: "#4ADE80", top: "16%", left: "44%", size: "10px" },
+  { color: "#22D3EE", top: "90%", left: "46%", size: "10px" },
+  { color: "#FACC15", top: "38%", right: "3%", size: "9px" },
+  { color: "#1e293b", top: "80%", right: "4%", size: "10px" },
 ];
+
+const AirbnbIcon = () => (
+  <div
+    style={{
+      width: "80px",
+      height: "80px",
+      borderRadius: "20px",
+      background: "linear-gradient(145deg, #FF6B6B, #e84043)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      boxShadow: "0 8px 28px rgba(0,0,0,0.15)",
+    }}
+  >
+    <svg width="44" height="44" viewBox="0 0 32 32" fill="none">
+      <path
+        d="M16 3C10.2 3 7 8.5 7 12.5c0 2.7 1.1 5 2.8 6.8L16 29l6.2-9.7C23.9 17.5 25 15.2 25 12.5 25 8.5 21.8 3 16 3zm0 13a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"
+        fill="white"
+      />
+    </svg>
+  </div>
+);
+
+const BookingIcon = () => (
+  <div
+    style={{
+      width: "80px",
+      height: "80px",
+      borderRadius: "20px",
+      background: "linear-gradient(145deg, #1a3e8a, #003b8f)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      boxShadow: "0 8px 28px rgba(0,0,0,0.15)",
+      color: "white",
+      fontSize: "30px",
+      fontWeight: "900",
+      letterSpacing: "-1px",
+      fontFamily: "Arial, sans-serif",
+    }}
+  >
+    B.
+  </div>
+);
+
+const VrboIcon = () => (
+  <div
+    style={{
+      width: "80px",
+      height: "80px",
+      borderRadius: "20px",
+      background: "linear-gradient(145deg, #1b1c4b, #252660)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      boxShadow: "0 8px 28px rgba(0,0,0,0.15)",
+    }}
+  >
+    <svg width="58" height="32" viewBox="0 0 58 32" fill="none">
+      <text
+        x="29"
+        y="22"
+        textAnchor="middle"
+        fontSize="16"
+        fontWeight="700"
+        fill="white"
+        fontFamily="Arial, sans-serif"
+      >
+        vrbo
+      </text>
+    </svg>
+  </div>
+);
+
+const TripadvisorIcon = () => (
+  <div
+    style={{
+      width: "80px",
+      height: "80px",
+      borderRadius: "20px",
+      background: "linear-gradient(145deg, #00c49a, #00AF87)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      boxShadow: "0 8px 28px rgba(0,0,0,0.15)",
+    }}
+  >
+    <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+      <circle cx="16" cy="26" r="9" fill="white" />
+      <circle cx="34" cy="26" r="9" fill="white" />
+      <circle cx="16" cy="26" r="5" fill="#00AF87" />
+      <circle cx="34" cy="26" r="5" fill="#00AF87" />
+      <circle cx="16" cy="26" r="2.5" fill="#111" />
+      <circle cx="34" cy="26" r="2.5" fill="#111" />
+      <rect x="21" y="23" width="8" height="5" rx="1" fill="white" />
+      <polygon points="25,14 20,20 30,20" fill="#FF3B30" />
+    </svg>
+  </div>
+);
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full bg-white overflow-hidden py-24">
-      {/* Grid background */}
+    <section
+      className="relative w-full overflow-hidden"
+      style={{
+        background: "#ffffff",
+        paddingTop: "70px",
+        paddingBottom: "70px",
+        minHeight: "500px",
+      }}
+    >
+      {/* Top pink gradient fade — only from top, no center glow */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-20"
+        className="absolute top-0 left-0 right-0 pointer-events-none"
         style={{
+          height: "110px",
+          background:
+            "linear-gradient(to bottom, rgba(236, 60, 106, 0.10) 0%, rgba(255,255,255,0) 100%)",
+          zIndex: 1,
+        }}
+      />
+
+      {/* Large grid background */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          zIndex: 2,
           backgroundImage:
-            "linear-gradient(to right, var(--border-default) 1px, transparent 1px), linear-gradient(to bottom, var(--border-default) 1px, transparent 1px)",
-          backgroundSize: "50px 50px",
+            "linear-gradient(to right, #e2e2e2 1px, transparent 1px), linear-gradient(to bottom, #e2e2e2 1px, transparent 1px)",
+          backgroundSize: "130px 110px",
+          opacity: 0.7,
         }}
       />
 
-      {/* Ellipse gradient circle — Figma: w923 h523 top149 left249 */}
-      {/* Scaled responsively: on desktop matches Figma proportions, shrinks on mobile */}
-      <div
-        className="absolute pointer-events-none"
-        style={{
-          /* Desktop: exact Figma values */
-          // width: "923px",
-          // height: "523px",
-          // top: "149px",
-          // left: "249px",
-          borderRadius: "50%",
-          background:
-            "radial-gradient(ellipse at center, rgba(236, 72, 153, 0.13) 0%, rgba(236, 72, 153, 0.07) 35%, rgba(255,255,255,0) 70%)",
-          filter: "blur(18px)",
-          transform: "translateZ(0)",
-        }}
-      />
-
-      {/* Mobile ellipse — smaller version centered */}
-      <div
-        className="absolute pointer-events-none block md:hidden"
-        style={{
-          // width: "90vw",
-          // height: "300px",
-          top: "80px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          borderRadius: "50%",
-          background:
-            "radial-gradient(ellipse at center, rgba(236, 72, 153, 0.13) 0%, rgba(236, 72, 153, 0.07) 35%, rgba(255,255,255,0) 70%)",
-          filter: "blur(14px)",
-        }}
-      />
-
-      {/* Colored dots — hidden on very small screens */}
+      {/* Colored dots */}
       {dots.map((dot, i) => (
         <div
           key={i}
-          className={`absolute rounded-full hidden sm:block ${dot.size} ${dot.top} ${dot.left || ""} ${dot.right || ""}`}
+          className="absolute rounded-full hidden sm:block"
           style={{
-            backgroundColor:
-              dot.color === "bg-primary"
-                ? "var(--primary)"
-                : dot.color === "bg-primary-light"
-                  ? "var(--primary-light)"
-                  : dot.color === "bg-yellow-400"
-                    ? "#FACC15"
-                    : dot.color === "bg-green-400"
-                      ? "#4ADE80"
-                      : dot.color === "bg-cyan-400"
-                        ? "#22D3EE"
-                        : "",
+            width: dot.size,
+            height: dot.size,
+            backgroundColor: dot.color,
+            top: dot.top,
+            left: dot.left ?? undefined,
+            right: dot.right ?? undefined,
+            zIndex: 5,
           }}
         />
       ))}
 
-      {/* Floating brand icons */}
       {/* Top-left: Airbnb */}
-      <div className="absolute top-[5%] left-[3%] sm:left-[6%] lg:left-[25%] -rotate-12 w-12 h-12 sm:w-14 sm:h-14 lg:w-20 lg:h-20 ">
-        <Image
-          src={logo}
-          alt="Airbnb Logo"
-          width={100}
-          height={100}
-          className="w-full h-full object-contain"
-        />
+      <div
+        className="absolute hidden sm:flex"
+        style={{
+          top: "12%",
+          left: "13%",
+          transform: "rotate(-12deg)",
+          zIndex: 5,
+        }}
+      >
+        <AirbnbIcon />
       </div>
 
       {/* Top-right: Booking */}
-      <div className="absolute top-[5%] right-[3%] sm:right-[6%] lg:right-[25%] rotate-6 w-12 h-12 sm:w-14 sm:h-14 lg:w-20 lg:h-20 ">
-        <Image
-          src={logo4}
-          alt="Booking Logo"
-          width={100}
-          height={100}
-          className="w-full h-full object-contain"
-        />
+      <div
+        className="absolute hidden sm:flex"
+        style={{
+          top: "12%",
+          right: "13%",
+          transform: "rotate(6deg)",
+          zIndex: 5,
+        }}
+      >
+        <BookingIcon />
       </div>
 
       {/* Bottom-left: Vrbo */}
-      <div className="absolute top-[85%] left-[3%] sm:left-[6%] lg:left-[30%] -rotate-6 w-12 h-12 sm:w-14 sm:h-14 lg:w-20 lg:h-20 ">
-        <Image
-          src={logo3}
-          alt="Vrbo Logo"
-          width={100}
-          height={100}
-          className="w-full h-full object-contain"
-        />
+      <div
+        className="absolute hidden sm:flex"
+        style={{
+          top: "68%",
+          left: "16%",
+          transform: "rotate(-6deg)",
+          zIndex: 5,
+        }}
+      >
+        <VrboIcon />
       </div>
 
       {/* Bottom-right: Tripadvisor */}
-      <div className="absolute top-[85%] right-[3%] sm:right-[6%] lg:right-[30%] rotate-12 w-12 h-12 sm:w-14 sm:h-14 lg:w-20 lg:h-20 ">
-        <Image
-          src={logo2}
-          alt="Tripadvisor Logo"
-          width={100}
-          height={100}
-          className="w-full h-full object-contain"
-        />
+      <div
+        className="absolute hidden sm:flex"
+        style={{
+          top: "68%",
+          right: "16%",
+          transform: "rotate(12deg)",
+          zIndex: 5,
+        }}
+      >
+        <TripadvisorIcon />
       </div>
 
       {/* Hero content */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center pt-16 pb-12 px-4 sm:px-6 ">
+      <div
+        className="relative flex flex-col items-center justify-center text-center px-4 sm:px-6"
+        style={{ zIndex: 10, paddingTop: "60px", paddingBottom: "40px" }}
+      >
         <h1
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 leading-tight"
-          style={{ color: "var(--text-primary)" }}
+          className="font-bold leading-tight"
+          style={{
+            fontSize: "clamp(30px, 4.8vw, 54px)",
+            color: "var(--text-primary)",
+            marginBottom: "4px",
+          }}
         >
           Airbnb Assistants For
         </h1>
+
         <h2
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight"
-          style={{ color: "var(--primary)" }}
+          className="font-normal leading-tight"
+          style={{
+            fontSize: "clamp(26px, 4.2vw, 48px)",
+            color: "var(--text-primary)",
+            marginBottom: "24px",
+          }}
         >
           Property Management
         </h2>
+
         <p
-          className="max-w-xs sm:max-w-lg md:max-w-2xl text-sm sm:text-base leading-relaxed mb-8 px-2 sm:px-4"
-          style={{ color: "var(--text-secondary)" }}
+          style={{
+            maxWidth: "530px",
+            fontSize: "15px",
+            lineHeight: "1.72",
+            color: "var(--text-secondary)",
+            textAlign: "center",
+            marginBottom: "34px",
+          }}
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -191,8 +258,13 @@ export default function HeroSection() {
 
         <Link
           href="#"
-          className="text-white font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-md inline-flex items-center gap-2 transition-all duration-200 text-sm sm:text-base mb-4 hover:scale-105 active:scale-95"
-          style={{ backgroundColor: "var(--primary)" }}
+          className="inline-flex items-center gap-2 font-semibold text-white rounded-lg transition-all duration-200 hover:scale-105 active:scale-95"
+          style={{
+            backgroundColor: "var(--primary)",
+            padding: "13px 34px",
+            fontSize: "15px",
+            marginBottom: "18px",
+          }}
           onMouseEnter={(e) =>
             (e.currentTarget.style.backgroundColor = "var(--primary-dark)")
           }
@@ -200,19 +272,17 @@ export default function HeroSection() {
             (e.currentTarget.style.backgroundColor = "var(--primary)")
           }
         >
-          Schedule A Meeting <span className="text-base">→</span>
+          Schedule A Meeting <span>→</span>
         </Link>
 
         <Link
           href="#"
-          className="text-sm font-medium underline underline-offset-4 hover:opacity-80 transition-opacity"
+          className="text-sm font-medium underline underline-offset-4 hover:opacity-70 transition-opacity"
           style={{ color: "var(--text-primary)" }}
         >
           See Pricing
         </Link>
       </div>
-
-      {/* Trusted tag */}
     </section>
   );
 }
