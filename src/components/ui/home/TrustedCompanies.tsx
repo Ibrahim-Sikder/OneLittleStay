@@ -20,16 +20,16 @@ const companies = [
 
 export default function TrustedCompanies() {
   return (
-    <section className="w-full py-8 md:py-10 bg-white">
+    <section className="w-full mt-8 md:mt-12 bg-white">
       {/* Trusted by heading */}
-      <p className="text-center text-xs md:text-sm font-semibold px-4">
+      <p className="text-center text-xs md:text-[16px] font-semibold px-4">
         Trusted by leaders in 50+ industries
       </p>
 
       {/* Company logos */}
-      <div className="bg-light mt-4 md:mt-5 py-3 md:py-4">
+      <div className="bg-light mt-5 md:mt-8 py-4 md:py-4">
         <Container>
-          <div className="flex items-center justify-between w-fullgap-6 md:gap-8 lg:gap-12 px-4">
+          <div className="flex items-center justify-between w-full gap-6 md:gap-8 lg:gap-12 px-4">
             {companies.map((company) => (
               <div key={company.name}>
                 <Image
