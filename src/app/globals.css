@@ -23,14 +23,20 @@
   /* Border Colors */
   --border-light: #f6f6f6;
   --border-default: #e5e7eb;
+
+  /*  FONT VARIABLES (FIXED) */
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-poppins);
 }
 
+/* Tailwind inline theme mapping */
 @theme inline {
-  /* Base theme variables */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  /* FONT MAPPING */
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
 
   /* Brand colors */
   --color-primary: var(--primary);
@@ -38,22 +44,34 @@
   --color-bg-light: var(--bg-light);
   --color-bg-gray: var(--bg-gray);
 }
-
-/* Remove dark mode preference to keep consistent branding */
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
-
+/* BASE TYPOGRAPHY SYSTEM */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Utility Classes for Custom Variables */
+/* HEADING SYSTEM */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading), sans-serif;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+/* Optional: better paragraph readability */
+p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Utility Classes */
 @layer utilities {
   /* Background utilities */
   .bg-primary {

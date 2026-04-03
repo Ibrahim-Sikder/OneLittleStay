@@ -13,7 +13,6 @@ import ToolSection from "@/components/ui/home/ToolSection";
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
-      <Header />
       <HeroSection />
       <Brand />
       <PricingSection />
@@ -23,7 +22,6 @@ export default function Home() {
       <ChooseUs />
       <Review />
       <FAQSection />
-      <FooterSection />
     </main>
   );
 }
