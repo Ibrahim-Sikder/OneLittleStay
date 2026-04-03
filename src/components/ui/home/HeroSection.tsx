@@ -4,17 +4,9 @@ import logo from "@/assets/images/logo/logo2.png";
 import logo2 from "@/assets/images/logo/logo3.png";
 import logo3 from "@/assets/images/logo/logo4.png";
 import logo4 from "@/assets/images/logo/logo5.png";
+import dot from "@/assets/images/dot/dot.png";
+import dot2 from "@/assets/images/dot/dot2.png";
 import Image from "next/image";
-
-const dots = [
-  { color: "#6366f1", top: "26%", left: "4%", size: "10px" },
-  { color: "#f87171", top: "60%", left: "6%", size: "8px" },
-  { color: "#FACC15", top: "85%", left: "5%", size: "8px" },
-  { color: "#4ADE80", top: "16%", left: "47%", size: "10px" },
-  { color: "#22D3EE", top: "92%", left: "48%", size: "10px" },
-  { color: "#FACC15", top: "38%", right: "3%", size: "9px" },
-  { color: "#1e293b", top: "80%", right: "4%", size: "10px" },
-];
 
 export default function HeroSection() {
   return (
@@ -22,9 +14,9 @@ export default function HeroSection() {
       className="relative w-full overflow-hidden"
       style={{
         background: "#ffffff",
-        paddingTop: "clamp(40px, 10vw, 85px)",
-        paddingBottom: "clamp(40px, 10vw, 40px)",
-        minHeight: "530px",
+        paddingTop: "clamp(40px, 10vw, 75px)",
+        paddingBottom: "clamp(25px, 10vw, 55px)",
+        minHeight: "clamp(350px, 45vh, 550px)",
       }}
     >
       {/* Top pink gradient fade only — no center glow */}
@@ -50,29 +42,16 @@ export default function HeroSection() {
         }}
       />
 
-      {/* Colored dots */}
-      {dots.map((dot, i) => (
-        <div
-          key={i}
-          className="absolute rounded-full hidden sm:block"
-          style={{
-            width: `clamp(${dot.size}, 1.5vw, ${dot.size})`,
-            height: `clamp(${dot.size}, 1.5vw, ${dot.size})`,
-            backgroundColor: dot.color,
-            top: dot.top,
-            left: dot.left ?? undefined,
-            right: dot.right ?? undefined,
-            zIndex: 5,
-          }}
-        />
-      ))}
-
-      {/* Top-left: Airbnb */}
+      {/* Top-left: Airbnb - responsive positioning */}
       <div
         className="absolute hidden sm:flex -rotate-12"
-        style={{ top: "13%", left: "25%", zIndex: 5 }}
+        style={{
+          top: "clamp(8%, 13%, 15%)",
+          left: "clamp(15%, 25%, 30%)",
+          zIndex: 5,
+        }}
       >
-        <div className="w-12 h-12 md:w-16 md:h-16 lg:w-24 lg:h-24">
+        <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-24 lg:h-24">
           <Image
             src={logo}
             alt="Airbnb Logo"
@@ -83,12 +62,16 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Top-right: Booking */}
+      {/* Top-right: Booking - responsive positioning */}
       <div
         className="absolute hidden sm:flex rotate-6"
-        style={{ top: "13%", right: "25%", zIndex: 5 }}
+        style={{
+          top: "clamp(8%, 13%, 15%)",
+          right: "clamp(15%, 25%, 30%)",
+          zIndex: 5,
+        }}
       >
-        <div className="w-12 h-12 md:w-16 md:h-16 lg:w-24 lg:h-24">
+        <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-24 lg:h-24">
           <Image
             src={logo4}
             alt="Booking Logo"
@@ -99,12 +82,16 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Bottom-left: Vrbo */}
+      {/* Bottom-left: Vrbo - responsive positioning */}
       <div
         className="absolute hidden sm:flex -rotate-6"
-        style={{ top: "75%", left: "28%", zIndex: 5 }}
+        style={{
+          top: "clamp(70%, 75%, 80%)",
+          left: "clamp(18%, 28%, 32%)",
+          zIndex: 5,
+        }}
       >
-        <div className="w-12 h-12 md:w-16 md:h-16 lg:w-[70px] lg:h-[70px]">
+        <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-[70px] lg:h-[70px]">
           <Image
             src={logo3}
             alt="Vrbo Logo"
@@ -115,12 +102,16 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Bottom-right: Tripadvisor */}
+      {/* Bottom-right: Tripadvisor - responsive positioning */}
       <div
         className="absolute hidden sm:flex rotate-12"
-        style={{ top: "75%", right: "28%", zIndex: 5 }}
+        style={{
+          top: "clamp(70%, 75%, 80%)",
+          right: "clamp(18%, 28%, 32%)",
+          zIndex: 5,
+        }}
       >
-        <div className="w-12 h-12 md:w-16 md:h-16 lg:w-[70px] lg:h-[70px]">
+        <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-[70px] lg:h-[70px]">
           <Image
             src={logo2}
             alt="Tripadvisor Logo"
@@ -131,7 +122,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Hero content */}
+      {/* Hero content - fully responsive with improved spacing */}
       <div
         className="relative flex flex-col items-center justify-center text-center px-4 sm:px-6"
         style={{
@@ -140,12 +131,21 @@ export default function HeroSection() {
           paddingBottom: "clamp(30px, 6vw, 40px)",
         }}
       >
+        <div className="hidden sm:block mb-5 lg:w-3 lg:h-3">
+          <Image
+            src={dot}
+            alt="dot"
+            width={50}
+            height={50}
+            className="w-full h-full object-contain"
+          />
+        </div>
         <h1
           className="font-bold leading-tight px-2"
           style={{
             fontSize: "clamp(28px, 4.8vw, 54px)",
             color: "var(--text-primary)",
-            marginBottom: "4px",
+            marginBottom: "clamp(2px, 1vw, 4px)",
           }}
         >
           Airbnb Assistants For
@@ -154,7 +154,7 @@ export default function HeroSection() {
         <h2
           className="font-normal leading-tight px-2"
           style={{
-            fontSize: "clamp(24px, 4.2vw, 48px)",
+            fontSize: "clamp(22px, 4.2vw, 48px)",
             color: "var(--text-primary)",
             marginBottom: "clamp(20px, 4vw, 24px)",
           }}
@@ -170,8 +170,8 @@ export default function HeroSection() {
             color: "var(--text-secondary)",
             textAlign: "center",
             marginBottom: "clamp(28px, 6vw, 34px)",
-            paddingLeft: "clamp(12px, 4vw, 0)",
-            paddingRight: "clamp(12px, 4vw, 0)",
+            paddingLeft: "clamp(16px, 5vw, 0)",
+            paddingRight: "clamp(16px, 5vw, 0)",
           }}
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -206,6 +206,15 @@ export default function HeroSection() {
         >
           See Pricing
         </Link>
+        <div className="hidden sm:block mt-5  lg:w-3 lg:h-3 ">
+          <Image
+            src={dot2}
+            alt="dot2"
+            width={50}
+            height={50}
+            className=" w-full h-full object-contain"
+          />
+        </div>
       </div>
     </section>
   );
