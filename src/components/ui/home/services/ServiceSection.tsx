@@ -1,28 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import service from "@/assets/images/services/service.png";
-import service2 from "@/assets/images/services/service2.png";
-import service3 from "@/assets/images/services/service3.png";
-import service4 from "@/assets/images/services/service4.png";
-import service5 from "@/assets/images/services/service5.png";
-import service6 from "@/assets/images/services/service6.png";
+import { services } from "@/contstant";
 import { ServiceCardProps } from "@/interface/service";
-
-const LOREM =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-
-const services = [
-  { img: service, title: "Manage Property Listings", description: LOREM },
-  { img: service2, title: "Manage Customer Bookings", description: LOREM },
-  { img: service3, title: "Schedule House Cleaning", description: LOREM },
-  { img: service4, title: "Monitor Guest Reviews", description: LOREM },
-  { img: service5, title: "Track & Report Expenses", description: LOREM },
-  { img: service6, title: "Guest Inquiry & Support", description: LOREM },
-];
-
-// ─── Service Card Component ─────────────────────────────────────────────────────────────
-
 const ServiceCard: React.FC<ServiceCardProps> = ({
   img,
   title,
@@ -91,14 +71,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   </div>
 );
 
-// ─── Main Section ─────────────────────────────────────────────────────────────
 export default function ServiceSection() {
   return (
-    <section className="w-full bg-white py-12 sm:py-16 px-4 sm:px-6">
-      {/* Header */}
+    <section className="w-full bg-white pb-12 md:pb-16 px-4 sm:px-6">
       <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
         <h2
-          className="text-3xl sm:text-4xl font-bold mb-4"
+          className="text-xl sm:text-2xl md:text-4xl font-bold mb-4"
           style={{ color: "var(--text-primary)" }}
         >
           Our <span style={{ color: "var(--primary)" }}>Service</span>
@@ -114,7 +92,6 @@ export default function ServiceSection() {
         </p>
       </div>
 
-      {/* Grid */}
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
         {services.map((service, index) => (
           <ServiceCard

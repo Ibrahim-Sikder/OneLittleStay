@@ -15,7 +15,7 @@ export default function HeroSection() {
       style={{
         background: "#ffffff",
         paddingTop: "clamp(40px, 10vw, 75px)",
-        paddingBottom: "clamp(25px, 10vw, 55px)",
+        paddingBottom: "clamp(25px, 10vw, 94px)",
         minHeight: "clamp(350px, 45vh, 550px)",
       }}
     >
@@ -143,7 +143,7 @@ export default function HeroSection() {
         <h1
           className="font-bold leading-tight px-2"
           style={{
-            fontSize: "clamp(28px, 4.8vw, 54px)",
+            fontSize: "clamp(24px, 4.8vw, 40px)",
             color: "var(--text-primary)",
             marginBottom: "clamp(2px, 1vw, 4px)",
           }}
@@ -154,7 +154,7 @@ export default function HeroSection() {
         <h2
           className="font-normal leading-tight px-2"
           style={{
-            fontSize: "clamp(22px, 4.2vw, 48px)",
+            fontSize: "clamp(22px, 4.2vw, 30px)",
             color: "var(--text-primary)",
             marginBottom: "clamp(20px, 4vw, 24px)",
           }}
