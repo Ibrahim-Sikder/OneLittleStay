@@ -30,7 +30,7 @@ export default function Header() {
   return (
     <>
       <header
-        className="w-full h-[89px] border-b bg-white sticky top-0 z-50"
+        className="w-full h-14 md:h-[89px] border-b bg-white sticky top-0 z-50"
         style={{ borderColor: "var(--border-light)" }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-full flex items-center justify-between">

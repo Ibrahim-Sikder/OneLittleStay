@@ -36,7 +36,7 @@ export default function ToolSection() {
         style={{ backgroundColor: "var(--bg-light)" }}
       >
         <Container className="max-w-3xl">
-          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+          <ul className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             {tools.slice(0, 9).map((tool, i) => (
               <li
                 key={tool.alt}
