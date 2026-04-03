@@ -81,7 +81,7 @@ export default function FooterSection() {
           </div>
         </footer>
       </Container>
-      <div className="bg-[#1a1035] py-4 text-center">
+      <div className="bg-[#230B41] py-4 text-center">
         <p className="text-gray-400 text-sm md:text-base">
           © 2026, All Rights Reserved by XYz
         </p>

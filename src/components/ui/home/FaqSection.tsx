@@ -43,7 +43,7 @@ export default function FAQSection() {
                 <button
                   onClick={() => setOpenIndex(openIndex === i ? -1 : i)}
                   aria-expanded={openIndex === i}
-                  className="w-full flex items-center justify-between py-5 text-left group focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors"
+                  className="w-full flex items-center justify-between py-5 text-left group focus:outline-none focus:ring-0 focus:ring-offset-0 active:outline-none active:ring-0 transition-colors"
                 >
                   <span
                     className="text-sm md:text-base font-medium transition-colors duration-200 pr-2"

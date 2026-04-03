@@ -28,16 +28,34 @@ export default function ServiceSection() {
         </p>
       </div>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-        {services.map((service, index) => (
-          <ServiceCard
-            key={service.title}
-            img={service.img}
-            title={service.title}
-            description={service.description}
-            isActive={index === 0}
-          />
-        ))}
+      <div className="max-w-6xl mx-auto">
+        {/* Small devices - show only 2 cards */}
+        <div className="block sm:hidden">
+          <div className="grid grid-cols-2 gap-5">
+            {services.slice(0, 2).map((service, index) => (
+              <ServiceCard
+                key={service.title}
+                img={service.img}
+                title={service.title}
+                description={service.description}
+                isActive={index === 0}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Medium and larger devices - show all cards */}
+        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          {services.map((service, index) => (
+            <ServiceCard
+              key={service.title}
+              img={service.img}
+              title={service.title}
+              description={service.description}
+              isActive={index === 0}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

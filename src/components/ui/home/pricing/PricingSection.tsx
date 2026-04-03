@@ -22,7 +22,7 @@ export default function PricingSection() {
           style={{ color: "var(--text-primary)" }}
         >
           Airbnb Assistant{" "}
-          <span style={{ color: "var(--primary)" }}>pricing</span>
+          <span style={{ color: "var(--primary)" }}>Pricing</span>
         </h2>
         <p
           className="text-sm sm:text-base"

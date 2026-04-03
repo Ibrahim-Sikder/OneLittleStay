@@ -40,13 +40,13 @@ export default function Review() {
           spaceBetween={24}
           slidesPerView={1}
           centeredSlides={true}
-          speed={1000}
-          autoplay={{
-            delay: 4500,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
-          loop
+          // speed={1000}
+          // autoplay={{
+          //   delay: 4500,
+          //   disableOnInteraction: false,
+          //   pauseOnMouseEnter: true,
+          // }}
+          // loop
           breakpoints={{
             640: { slidesPerView: 1.2, spaceBetween: 16 },
             768: { slidesPerView: 2, spaceBetween: 20 },
@@ -57,11 +57,18 @@ export default function Review() {
         >
           {reviews.map((r, i) => (
             <SwiperSlide key={i} role="listitem">
-              <div className="review-card rounded-2xl transition-all duration-700">
-                <div className="block md:hidden text-center">
+              <div
+                className="review-card rounded-2xl transition-all duration-700"
+                style={{
+                  backgroundColor: "var(--background)",
+                  border: "1px solid var(--border-default)",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+                }}
+              >
+                <div className="block md:hidden text-center p-6">
                   <div className="flex flex-col items-center">
                     <div
-                      className="w-14 h-14 rounded-full overflow-hidden mb-3"
+                      className="w-14 h-14 rounded-full overflow-hidden mb-3 shadow-md"
                       style={{ backgroundColor: "var(--border-default)" }}
                     >
                       <Image
@@ -73,19 +80,19 @@ export default function Review() {
                       />
                     </div>
                     <h4
-                      className="font-bold text-base"
+                      className="font-bold text-base mb-1"
                       style={{ color: "var(--text-primary)" }}
                     >
                       {r.name}
                     </h4>
                     <p
-                      className="text-sm leading-relaxed mt-1"
+                      className="text-sm leading-relaxed mt-1 mb-2"
                       style={{ color: "var(--text-secondary)" }}
                     >
                       {r.text}
                     </p>
                     <div
-                      className="flex justify-center mt-2"
+                      className="flex justify-center mt-1"
                       aria-label={`Rated ${r.rating} out of 5`}
                     >
                       <Stars count={r.rating} />
@@ -93,10 +100,10 @@ export default function Review() {
                   </div>
                 </div>
 
-                <div className="hidden md:flex md:gap-6 items-center">
+                <div className="hidden md:flex md:gap-6 items-center p-6">
                   <div className="flex-shrink-0">
                     <div
-                      className="w-14 h-14 rounded-full overflow-hidden"
+                      className="w-14 h-14 rounded-full overflow-hidden shadow-md"
                       style={{ backgroundColor: "var(--border-default)" }}
                     >
                       <Image
@@ -116,7 +123,7 @@ export default function Review() {
                       {r.name}
                     </h4>
                     <p
-                      className="text-sm leading-relaxed mt-1"
+                      className="text-sm leading-relaxed mt-1 mb-1"
                       style={{ color: "var(--text-secondary)" }}
                     >
                       {r.text}

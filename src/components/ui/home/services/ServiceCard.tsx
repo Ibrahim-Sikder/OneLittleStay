@@ -9,7 +9,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
 }) => {
   return (
     <article
-      className={`rounded-md md:rounded-2xl p-2 sm:p-8 flex flex-col md:gap-5 gap-y-2 transition-transform duration-300 hover:scale-105`}
+      className={`rounded-md md:rounded-2xl py-3 px-2 sm:p-8 flex flex-col md:gap-5 gap-y-2 transition-transform duration-300 hover:scale-105`}
       style={{
         boxShadow: isActive
           ? "0 2px 16px 0 rgba(0,0,0,0.07)"
@@ -18,11 +18,11 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
         backgroundColor: isActive
           ? "var(--background)"
           : "rgba(248, 190, 205, 0.1)",
-        minHeight: "280px",
+        minHeight: "250px",
         height: "auto",
       }}
     >
-      <figure className="md:w-20 w-8 h-8  md:h-20 flex items-center justify-center mx-auto">
+      <figure className="md:w-20 w-12 h-12 md:h-20 flex items-center justify-center mx-auto">
         <Image
           src={img}
           alt={title}
@@ -33,20 +33,20 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
       </figure>
 
       <h3
-        className="font-bold text-xs md:text-xl  text-center"
+        className="font-bold text-xs md:text-xl text-center"
         style={{ color: "var(--text-primary)" }}
       >
         {title}
       </h3>
 
       <p
-        className="text-[12px] md:text-base  text-center"
+        className="text-[10px] md:text-base text-center line-clamp-5 md:line-clamp-none"
         style={{ color: "var(--text-secondary)" }}
       >
         {description}
       </p>
 
-      <div className="flex justify-center ">
+      <div className="flex justify-center mt-auto">
         <button
           className="text-[10px] sm:text-base font-medium rounded-full px-2 py-1 md:px-5 md:py-2 transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-primary"
           style={{

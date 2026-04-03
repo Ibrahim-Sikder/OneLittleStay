@@ -36,27 +36,55 @@ export default function ToolSection() {
         style={{ backgroundColor: "var(--bg-light)" }}
       >
         <Container className="max-w-3xl">
-          <ul className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
-            {tools.slice(0, 9).map((tool, i) => (
-              <li
-                key={tool.alt}
-                className="rounded-xl flex items-center justify-center p-3"
-                style={{
-                  minHeight: "100px",
-                  boxShadow: "0 1px 6px rgba(0,0,0,0.06)",
-                  backgroundColor: "var(--background)",
-                }}
-              >
-                <Image
-                  src={tool.img}
-                  alt={tool.alt}
-                  width={160}
-                  height={48}
-                  className="object-contain h-auto w-24 sm:w-28 md:w-32"
-                />
-              </li>
-            ))}
-          </ul>
+          {/* Small devices - show only 4 tools (2x2 grid) */}
+          <div className="block sm:hidden">
+            <ul className="grid grid-cols-2 gap-4">
+              {tools.slice(0, 4).map((tool) => (
+                <li
+                  key={tool.alt}
+                  className="rounded-xl flex items-center justify-center p-3"
+                  style={{
+                    minHeight: "100px",
+                    boxShadow: "0 1px 6px rgba(0,0,0,0.06)",
+                    backgroundColor: "var(--background)",
+                  }}
+                >
+                  <Image
+                    src={tool.img}
+                    alt={tool.alt}
+                    width={160}
+                    height={48}
+                    className="object-contain h-auto w-24"
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Medium and larger devices - show all 9 tools */}
+          <div className="hidden sm:block">
+            <ul className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+              {tools.slice(0, 9).map((tool) => (
+                <li
+                  key={tool.alt}
+                  className="rounded-xl flex items-center justify-center p-3"
+                  style={{
+                    minHeight: "100px",
+                    boxShadow: "0 1px 6px rgba(0,0,0,0.06)",
+                    backgroundColor: "var(--background)",
+                  }}
+                >
+                  <Image
+                    src={tool.img}
+                    alt={tool.alt}
+                    width={160}
+                    height={48}
+                    className="object-contain h-auto w-24 sm:w-28 md:w-32"
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
         </Container>
       </div>
     </section>

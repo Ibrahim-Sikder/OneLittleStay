@@ -100,7 +100,7 @@ export default function Header() {
             onClick={() => setIsMobileMenuOpen(false)}
           />
 
-          <div className="absolute right-0 top-[89px] h-[calc(100vh-89px)] w-64 bg-white shadow-xl animate-slide-in">
+          <div className="absolute right-0 top-[55px] h-[calc(100vh-89px)] w-64 bg-white shadow-xl animate-slide-in">
             <nav className="flex flex-col py-6" aria-label="Mobile Navigation">
               {navLinks.map((link) => (
                 <Link

@@ -12,7 +12,7 @@ import dot2 from "@/assets/images/dot/dot2.png";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-white py-[clamp(40px,10vw,70px)] min-h-[clamp(350px,45vh,550px)]">
+    <section className="relative w-full overflow-hidden bg-white py-[clamp(40px,10vw,72px)] min-h-[clamp(350px,45vh,550px)]">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[100px] bg-gradient-to-b from-[#ec3c6a14] to-transparent z-[1]" />
 
       <div className="pointer-events-none absolute inset-0 z-[2] opacity-60 bg-[linear-gradient(to_right,#dcdcdc_1px,transparent_1px),linear-gradient(to_bottom,#dcdcdc_1px,transparent_1px)] bg-[size:clamp(60px,8vw,90px)_clamp(60px,7vw,80px)]" />
@@ -53,7 +53,7 @@ export default function HeroSection() {
         />
       </div>
 
-      <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 py-[clamp(30px,8vw,60px)]">
+      <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 py-[clamp(10px,3vw,70px)]">
         <Image
           src={dot}
           alt=""
