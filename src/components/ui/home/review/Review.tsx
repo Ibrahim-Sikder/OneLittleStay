@@ -10,13 +10,10 @@ import { Stars } from "./star";
 
 export default function Review() {
   return (
-    <section
-      aria-labelledby="review-heading"
-      className="w-full bg-white pb-12 md:pb-16 px-4 sm:px-6 overflow-hidden"
-    >
+    <section className="w-full bg-white pb-12 md:pb-16 px-4 sm:px-6 overflow-hidden">
+      {/* Header */}
       <div className="text-center max-w-2xl mx-auto">
         <h2
-          id="review-heading"
           className="text-xl sm:text-2xl md:text-4xl font-bold mb-4"
           style={{ color: "var(--text-primary)" }}
         >
@@ -24,7 +21,7 @@ export default function Review() {
           <span style={{ color: "var(--primary)" }}>Review</span>
         </h2>
         <p
-          className="text-sm md:text-base leading-relaxed"
+          className="text-xs md:text-sm leading-relaxed"
           style={{ color: "var(--text-secondary)" }}
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -34,41 +31,44 @@ export default function Review() {
         </p>
       </div>
 
-      <div className="max-w-7xl mx-auto mt-8">
+      {/* Swiper Slider */}
+      <div className="max-w-7xl mx-auto">
         <Swiper
           modules={[Autoplay]}
           spaceBetween={24}
           slidesPerView={1}
           centeredSlides={true}
-          // speed={1000}
-          // autoplay={{
-          //   delay: 4500,
-          //   disableOnInteraction: false,
-          //   pauseOnMouseEnter: true,
-          // }}
-          // loop
+          speed={1000}
+          autoplay={{
+            delay: 4500,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          loop={true}
           breakpoints={{
-            640: { slidesPerView: 1.2, spaceBetween: 16 },
-            768: { slidesPerView: 2, spaceBetween: 20 },
-            1024: { slidesPerView: 3, spaceBetween: 24 },
+            640: {
+              slidesPerView: 1.2,
+              spaceBetween: 16,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 24,
+            },
           }}
           className="review-slider"
-          role="list"
         >
           {reviews.map((r, i) => (
-            <SwiperSlide key={i} role="listitem">
-              <div
-                className="review-card rounded-2xl transition-all duration-700"
-                style={{
-                  backgroundColor: "var(--background)",
-                  border: "1px solid var(--border-default)",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
-                }}
-              >
-                <div className="block md:hidden text-center p-6">
-                  <div className="flex flex-col items-center">
+            <SwiperSlide key={i}>
+              <div className="review-card rounded-2xl transition-all duration-700">
+                {/* Mobile layout (image on top) */}
+                <div className="block md:hidden">
+                  <div className="flex flex-col items-center text-center">
                     <div
-                      className="w-14 h-14 rounded-full overflow-hidden mb-3 shadow-md"
+                      className="w-14 h-14 rounded-full overflow-hidden mb-3"
                       style={{ backgroundColor: "var(--border-default)" }}
                     >
                       <Image
@@ -79,31 +79,31 @@ export default function Review() {
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <h4
-                      className="font-bold text-base mb-1"
-                      style={{ color: "var(--text-primary)" }}
-                    >
-                      {r.name}
-                    </h4>
-                    <p
-                      className="text-sm leading-relaxed mt-1 mb-2"
-                      style={{ color: "var(--text-secondary)" }}
-                    >
-                      {r.text}
-                    </p>
-                    <div
-                      className="flex justify-center mt-1"
-                      aria-label={`Rated ${r.rating} out of 5`}
-                    >
-                      <Stars count={r.rating} />
+                    <div className="w-full">
+                      <h4
+                        className="font-bold text-base"
+                        style={{ color: "var(--text-primary)" }}
+                      >
+                        {r.name}
+                      </h4>
+                      <p
+                        className="text-xs md:text-sm leading-relaxed mt-1"
+                        style={{ color: "var(--text-secondary)" }}
+                      >
+                        {r.text}
+                      </p>
+                      <div className="flex justify-center mt-2">
+                        <Stars count={r.rating} />
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="hidden md:flex md:gap-6 items-center p-6">
+                {/* Desktop layout (image on left) */}
+                <div className="hidden md:flex md:gap-4">
                   <div className="flex-shrink-0">
                     <div
-                      className="w-14 h-14 rounded-full overflow-hidden shadow-md"
+                      className="w-14 h-14 rounded-full overflow-hidden"
                       style={{ backgroundColor: "var(--border-default)" }}
                     >
                       <Image
@@ -123,15 +123,12 @@ export default function Review() {
                       {r.name}
                     </h4>
                     <p
-                      className="text-sm leading-relaxed mt-1 mb-1"
+                      className="text-sm leading-relaxed mt-1"
                       style={{ color: "var(--text-secondary)" }}
                     >
                       {r.text}
                     </p>
-                    <Stars
-                      count={r.rating}
-                      aria-label={`Rated ${r.rating} out of 5`}
-                    />
+                    <Stars count={r.rating} />
                   </div>
                 </div>
               </div>
